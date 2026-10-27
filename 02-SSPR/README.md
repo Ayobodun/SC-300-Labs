@@ -65,7 +65,7 @@ SSPR helps organizations:
 |------|--------|------------|
 | 1 | Enable Self-Service Password Reset | ![Enable SSPR](Screenshot/Enable-SSPr.png) |
 | 2 | Start Password Reset Process | ![Password Reset](Screenshot/Password-reset.png) |
-| 3 | Select Authentication Method | ![Authentication Method](Screenshot/password reset2.png) |
+| 3 | Select Authentication Method | ![Authentication Method](Screenshot/password-reset2.png) |
 | 4 | Number Matching Challenge Generated | ![Number Matching](Screenshot/p-reset3.png) |
 | 5 | Microsoft Authenticator Verification | ![Authenticator Verification](Screenshot/p-reset4.PNG) |
 | 6 | Authentication Approval Request | ![Approval Request](Screenshot/auth-Doublee.png) |
@@ -125,7 +125,7 @@ The user was prompted to verify their identity using Microsoft Authenticator.
 
 📸 Screenshot:
 
-![Authentication Method](Screenshot/password reset2.png)
+![Authentication Method](Screenshot/password-reset2.png)
 
 ---
 
