@@ -56,7 +56,7 @@ Administrative Units help organizations:
 
 ### Administrative Role Used
 
-- User Administrator
+- Password Administrator
 
 ---
 
@@ -69,7 +69,7 @@ Administrative Units help organizations:
 | 3 | Add users to Administrative Unit | ![Add Users to AU](Screenshot/members-of-AU.png) |
 | 4 | Verify scoped role Password assignment | ![Verify Scope](Screenshot/role-assignment.png) |
 | 5 | Test delegated administration | `user-edit-test.png` |
-| 6 | Confirm restricted access | `scope-validation.png` |
+| 6 | Confirm restricted access |  ![Verify Scope](Screenshot/confirm-restricted-access.png )|
 
 ---
 
@@ -79,15 +79,14 @@ Created cloud-only test users for the lab environment.
 
 ### Example Users
 
-- Finance User 1
-- Finance User 2
-- Finance Administrator
+- User1Sin
+- HrSin
 
 ### Evidence
 
 📸 Screenshot:
 
-`users-created.png`
+`Screenshot/acc-creation.png`
 
 ---
 
@@ -108,7 +107,7 @@ The Administrative Unit was successfully created and made available for role sco
 
 📸 Screenshot:
 
-`administrative-unit-created.png`
+`Screenshot/create-AU.png`
 
 ---
 
@@ -118,8 +117,8 @@ Added test users into the newly created Administrative Unit.
 
 ### Users Added
 
-- Finance User 1
-- Finance User 2
+- User2Sin
+
 
 ### Result
 
