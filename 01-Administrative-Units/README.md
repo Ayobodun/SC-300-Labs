@@ -1,13 +1,12 @@
-
 # Microsoft Entra ID – Administrative Units
 
 ## 🧩 Overview
 
 This lab demonstrates how to implement delegated administration using Administrative Units in Microsoft Entra ID.
 
-Administrative Units enable organizations to delegate administrative tasks to specific administrators without granting tenant-wide permissions. This approach supports the principle of least privilege by limiting administrative scope to a defined set of users, groups, and devices.
+Administrative Units enable organizations to delegate administrative responsibilities to specific administrators without granting tenant-wide permissions. This approach supports the principle of least privilege by restricting administrative scope to a defined set of users, groups, and devices.
 
-In this lab, an Administrative Unit was created to represent a business department, and scoped administrative roles were assigned to allow management of only the users within that Administrative Unit.
+In this lab, an Administrative Unit was created to represent a business department. A scoped administrative role was then assigned, allowing password management only for users who belong to that Administrative Unit.
 
 ---
 
@@ -15,18 +14,18 @@ In this lab, an Administrative Unit was created to represent a business departme
 
 Without Administrative Units:
 
-- Helpdesk staff often receive excessive permissions
-- Administrators may gain visibility into users they should not manage
-- Increased risk of accidental or unauthorized changes
-- Reduced compliance with least privilege principles
+- Helpdesk staff may receive excessive permissions.
+- Administrators may gain visibility into users they should not manage.
+- There is an increased risk of accidental or unauthorized changes.
+- Organizations may struggle to comply with least privilege requirements.
 
 Administrative Units help organizations:
 
 ✅ Delegate administration securely
 
-✅ Reduce administrative attack surface
+✅ Reduce the administrative attack surface
 
-✅ Support compliance requirements
+✅ Support compliance and governance requirements
 
 ✅ Enforce role scoping
 
@@ -41,7 +40,7 @@ Administrative Units help organizations:
 - Added users to the Administrative Unit
 - Assigned a scoped administrative role
 - Validated delegated administration
-- Tested management capabilities within the assigned scope
+- Tested password management capabilities within the assigned scope
 
 ---
 
@@ -66,10 +65,10 @@ Administrative Units help organizations:
 |--------|---------|---------|
 | 1 | Create test users | ![User Creation](Screenshot/acc-creation.png) |
 | 2 | Create Administrative Unit | ![AU Creation](Screenshot/create-AU.png)|
-| 3 | Add users to Administrative Unit | ![Add Users to AU](Screenshot/members-of-AU.png) |
+| 3 | Add users to Administrative Unit | ![Add Users to AU](Screenshot/add-user-to-AU.png) |
 | 4 | Verify scoped role Password assignment | ![Verify Scope](Screenshot/role-assignment.png) |
 | 5 | Test delegated administration | `user-edit-test.png` |
-| 6 | Confirm restricted access |  ![Verify Scope](Screenshot/confirm-restricted-access.png )|
+| 6 | Confirm restricted access | ![Verify Scope](Screenshot/confirm-restricted-access.png )|
 
 ---
 
@@ -86,7 +85,7 @@ Created cloud-only test users for the lab environment.
 
 📸 Screenshot:
 
-`Screenshot/acc-creation.png`
+![User Creation](Screenshot/acc-creation.png)
 
 ---
 
@@ -101,60 +100,59 @@ Created a new Administrative Unit within Microsoft Entra ID.
 
 ### Result
 
-The Administrative Unit was successfully created and made available for role scoping.
+The Administrative Unit was successfully created and made available for delegated administration and role scoping.
 
 ### Evidence
 
 📸 Screenshot:
 
-`Screenshot/create-AU.png`
+![Create Administrative Unit](Screenshot/create-AU.png)
 
 ---
 
 # 3️⃣ Add Members to Administrative Unit
 
-Added test users into the newly created Administrative Unit.
+Added User2Sin to the newly created Administrative Unit.
 
 ### Users Added
 
 - User2Sin
 
-
 ### Result
 
-Users are now managed within the Administrative Unit scope.
+The user was successfully added to the Administrative Unit and is now managed within its scope.
 
 ### Evidence
 
 📸 Screenshot:
 
-`au-members.png`
+![Create Administrative Unit](Screenshot/add-user-to-AU.png)
 
 ---
 
 # 4️⃣ Scoped Role Assignment
 
-Assigned the User Administrator role to a delegated administrator at the Administrative Unit level.
+Assigned the Password Administrator role to a delegated administrator at the Administrative Unit level.
 
 ### Configuration
 
 Role Assigned:
 
-- User Administrator
+- Password Administrator
 
 Scope:
 
-- Finance Department Administrative Unit
+- Singapore Administrative Unit
 
 ### Result
 
-The administrator can only manage users within the assigned Administrative Unit.
+The administrator can reset passwords only for eligible users within the assigned Administrative Unit, without receiving tenant-wide administrative permissions.
 
 ### Evidence
 
 📸 Screenshot:
 
-`role-assignment.png`
+![Verify Scope](Screenshot/role-assignment.png)
 
 ---
 
@@ -164,25 +162,21 @@ Tested administrative capabilities using the delegated administrator account.
 
 ### Actions Tested
 
-✅ Update user profile information
-
-✅ Reset user password
+✅ Reset user passwords within scope
 
 ✅ View Administrative Unit members
 
-✅ Manage users within scope
+✅ Perform password administration for assigned users
 
 ### Evidence
 
 📸 Screenshot:
 
-`user-edit-test.png`
-
 ---
 
 # 6️⃣ Scope Restriction Validation
 
-Attempted administrative actions against users outside the Administrative Unit.
+Attempted password administration actions against users outside the Administrative Unit.
 
 ### Expected Result
 
@@ -190,15 +184,15 @@ Access denied.
 
 ### Validation
 
-The delegated administrator was unable to manage users outside the assigned Administrative Unit.
+The delegated administrator was unable to perform password management actions on users outside the assigned Administrative Unit.
 
-This confirms proper role scoping.
+This confirms that role permissions were correctly scoped and that least privilege access was successfully enforced.
 
 ### Evidence
 
 📸 Screenshot:
 
-`scope-validation.png`
+![Verify Scope](Screenshot/confirm-restricted-access.png )
 
 ---
 
@@ -206,17 +200,17 @@ This confirms proper role scoping.
 
 The delegated administrator was able to:
 
-✅ Manage users inside the Administrative Unit
+✅ View users inside the Administrative Unit
 
 ✅ Reset passwords for scoped users
 
-✅ Update selected user attributes
+✅ Perform password administration within the assigned scope
 
 The delegated administrator could NOT:
 
-❌ Manage users outside the Administrative Unit
+❌ Reset passwords for users outside the Administrative Unit
 
-❌ Assign global roles
+❌ Assign global administrative roles
 
 ❌ Access tenant-wide administration functions
 
@@ -236,36 +230,38 @@ The delegated administrator could NOT:
 
 This lab demonstrates how Administrative Units can be used to implement secure delegated administration within Microsoft Entra ID.
 
-By limiting administrative permissions to specific users and departments, organizations can enforce least privilege access, reduce administrative risk, and improve governance of identity resources.
+By restricting administrative permissions to a specific set of users, organizations can enforce least privilege access, reduce administrative risk, and strengthen identity governance controls.
 
 ---
 
 # 🧩 Troubleshooting
 
-### Unable to edit users within the Administrative Unit
+### Unable to reset passwords within the Administrative Unit
 
 Verify:
 
-- User is a member of the Administrative Unit
-- User Administrator role is assigned at Administrative Unit scope
-- Role assignment has propagated
+- The user is a member of the Administrative Unit.
+- The Password Administrator role is assigned at the Administrative Unit scope.
+- The role assignment has fully propagated.
 
-### Can view users but cannot modify them
+### Can view users but cannot reset passwords
 
 Verify:
 
-- Appropriate administrative role has been assigned
-- Administrative Unit role assignment is active
+- The appropriate administrative role has been assigned.
+- The Administrative Unit role assignment is active.
+- The target user falls within the Administrative Unit scope.
 
 ### Administrative Unit options not visible
 
 Verify:
 
-- Microsoft Entra ID P1 or P2 licensing requirements
-- Appropriate administrative permissions
+- Microsoft Entra ID licensing requirements are met.
+- Appropriate administrative permissions are assigned.
+- Administrative Units are available within the current tenant configuration.
 
 ---
 
 # ✅ Lab Result
 
-Successfully implemented Administrative Units and delegated administration in Microsoft Entra ID while maintaining least privilege access and role scoping.
+Successfully implemented Administrative Units and delegated password administration in Microsoft Entra ID while maintaining least privilege access and scoped administrative control.
