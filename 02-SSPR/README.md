@@ -4,9 +4,9 @@
 
 This lab demonstrates how to configure and validate Self-Service Password Reset (SSPR) in Microsoft Entra ID.
 
-Self-Service Password Reset enables users to securely reset or unlock their accounts without requiring assistance from the helpdesk. This reduces operational costs, minimizes downtime, and improves the overall user experience.
+Self-Service Password Reset (SSPR) allows users to securely reset their passwords without contacting the IT helpdesk. This reduces support overhead, improves user productivity, and strengthens identity security by enabling secure account recovery.
 
-In this lab, SSPR was configured for cloud users and tested through the Microsoft password reset portal to verify secure account recovery.
+In this lab, SSPR was enabled for users, authentication methods were configured, and the password reset process was validated using Microsoft Authenticator with number matching.
 
 ---
 
@@ -14,10 +14,10 @@ In this lab, SSPR was configured for cloud users and tested through the Microsof
 
 Without Self-Service Password Reset:
 
-- Users depend on IT support for password resets.
-- Password-related tickets increase helpdesk workload.
-- Productivity is lost while users wait for assistance.
-- Account recovery processes become slower and less efficient.
+- Users rely on IT support for password resets.
+- Password-related incidents increase helpdesk workload.
+- Users experience delays regaining access to their accounts.
+- Productivity can be impacted due to account lockouts.
 
 SSPR helps organizations:
 
@@ -36,10 +36,11 @@ SSPR helps organizations:
 # 🛠 What I Built
 
 - Enabled Self-Service Password Reset (SSPR)
-- Configured password reset settings
-- Registered user authentication methods
-- Tested password reset functionality
-- Validated successful account recovery
+- Configured password reset policies
+- Registered authentication methods
+- Configured Microsoft Authenticator verification
+- Tested the complete password reset workflow
+- Validated secure account recovery using number matching
 
 ---
 
@@ -49,29 +50,25 @@ SSPR helps organizations:
 
 - Self-Service Password Reset (SSPR)
 - Authentication Methods
-- Security Information Registration
-- Cloud Users
+- Microsoft Authenticator
+- Password Reset Portal
 
-### Authentication Methods Used
+### Authentication Method Used
 
 - Microsoft Authenticator
-- Email Verification
-- Mobile Phone Verification
 
 ---
 
-# 📸 Step-by-Step Evidence
+## 📸 Step-by-Step Evidence
 
 | Step | Action | Screenshot |
-|--------|---------|---------|
-| 1 | Enable Self-Service Password Reset | ![SSPR Enabled](Screenshot/enable-sspr.png) |
-| 2 | Configure Authentication Methods | ![Authentication Methods](Screenshot/authentication-methods.png) |
-| 3 | Register Security Information | ![Security Info](Screenshot/security-info-registration.png) |
-| 4 | Start Password Reset Process | ![Password Reset](Screenshot/password-reset-start.png) |
-| 5 | Verify Identity | ![Verification](Screenshot/verification-method.png) |
-| 6 | Successful Password Reset | ![Success](Screenshot/password-reset-success.png) |
-
----
+|------|--------|------------|
+| 1 | Enable Self-Service Password Reset | ![Enable SSPR](Screenshot/Enable-SSPr.png) |
+| 2 | Start Password Reset Process | ![Password Reset](Screenshot/Password-reset.png) |
+| 3 | Select Authentication Method | ![Authentication Method](Screenshot/password reset2.png) |
+| 4 | Number Matching Challenge Generated | ![Number Matching](Screenshot/p-reset3.png) |
+| 5 | Microsoft Authenticator Verification | ![Authenticator Verification](Screenshot/p-reset4.PNG) |
+| 6 | Authentication Approval Request | ![Approval Request](Screenshot/auth-Doublee.png) |
 
 # 1️⃣ Enable Self-Service Password Reset
 
@@ -80,65 +77,21 @@ Enabled Self-Service Password Reset within Microsoft Entra ID.
 ### Configuration
 
 - Self-Service Password Reset: Enabled
-- Scope: Selected Users
+- Scope: All Users
 
 ### Result
 
-Eligible users can reset their passwords without contacting the helpdesk.
+Users can securely reset their passwords without requiring helpdesk assistance.
 
 ### Evidence
 
 📸 Screenshot:
 
-![SSPR Enabled](Screenshot/enable-sspr.png)
+![Enable SSPR](Screenshot/Enable-SSPr.png)
 
 ---
 
-# 2️⃣ Configure Authentication Methods
-
-Configured authentication methods used during the password reset process.
-
-### Configuration
-
-- Microsoft Authenticator
-- Email Verification
-- Mobile Phone Verification
-
-### Result
-
-Users are required to verify their identity before resetting their password.
-
-### Evidence
-
-📸 Screenshot:
-
-![Authentication Methods](Screenshot/authentication-methods.png)
-
----
-
-# 3️⃣ Register Security Information
-
-Registered authentication methods for the test user account.
-
-### Authentication Methods Registered
-
-- Microsoft Authenticator
-- Recovery Email
-- Mobile Phone
-
-### Result
-
-The user successfully completed security information registration.
-
-### Evidence
-
-📸 Screenshot:
-
-![Security Info](Screenshot/security-info-registration.png)
-
----
-
-# 4️⃣ Start Password Reset Process
+# 2️⃣ Start Password Reset Process
 
 Initiated the password reset process using the Microsoft password reset portal.
 
@@ -146,57 +99,81 @@ Initiated the password reset process using the Microsoft password reset portal.
 
 1. Navigated to the password reset portal.
 2. Entered the username.
-3. Completed identity verification.
+3. Started the account recovery process.
 
 ### Result
 
-The password reset process was successfully initiated.
+The password reset workflow was successfully initiated.
 
 ### Evidence
 
 📸 Screenshot:
 
-![Password Reset](Screenshot/password-reset-start.png)
+![Password Reset Start](Screenshot/Password-reset.png)
 
 ---
 
-# 5️⃣ Identity Verification
+# 3️⃣ Select Authentication Method
 
-Verified user identity using the configured authentication method.
-
-### Verification Method
-
-- Microsoft Authenticator
+Configured Microsoft Authenticator as the verification method during the password reset process.
 
 ### Result
 
-Identity validation completed successfully.
+The user was prompted to verify their identity using Microsoft Authenticator.
 
 ### Evidence
 
 📸 Screenshot:
 
-![Verification](Screenshot/verification-method.png)
+![Authentication Method](Screenshot/password reset2.png)
 
 ---
 
-# 6️⃣ Successful Password Reset
+# 4️⃣ Number Matching Challenge Generated
 
-Successfully reset the password and validated access using the new credentials.
+Microsoft Entra ID generated a number matching challenge to verify the user's identity securely.
 
 ### Result
 
-✅ Password successfully reset
-
-✅ User account recovered
-
-✅ Sign-in successful using new password
+The user was prompted to approve the request using the number displayed on the sign-in screen.
 
 ### Evidence
 
 📸 Screenshot:
 
-![Success](Screenshot/password-reset-success.png)
+![Number Matching Challenge](Screenshot/p-reset3.png)
+
+---
+
+# 5️⃣ Microsoft Authenticator Verification
+
+The number matching challenge was sent to Microsoft Authenticator.
+
+### Result
+
+The user entered the correct number within Microsoft Authenticator to verify possession of the registered device.
+
+### Evidence
+
+📸 Screenshot:
+
+![Authenticator Verification](Screenshot/p-reset4.PNG)
+
+---
+
+# 6️⃣ Authentication Approval Request
+
+Microsoft Authenticator generated an approval request as part of the password reset process.
+
+### Result
+
+The authentication challenge was successfully delivered to the registered device.
+
+### Evidence
+
+📸 Screenshot:
+
+![Authenticator Approval](Screenshot/auth-Doublee.png)
 
 ---
 
@@ -204,19 +181,21 @@ Successfully reset the password and validated access using the new credentials.
 
 The user was able to:
 
-✅ Register authentication methods
+✅ Initiate the password reset process
 
-✅ Verify identity securely
+✅ Verify identity using Microsoft Authenticator
 
-✅ Reset password without administrator assistance
+✅ Complete number matching verification
 
-✅ Regain access to the account
+✅ Recover account access securely
 
 The user could NOT:
 
-❌ Bypass identity verification
+❌ Reset the password without identity verification
 
-❌ Reset passwords without registered authentication methods
+❌ Bypass Microsoft Authenticator verification
+
+❌ Complete the reset process without access to the registered authentication method
 
 ---
 
@@ -232,40 +211,40 @@ The user could NOT:
 
 # 💡 Outcome
 
-This lab demonstrates how Self-Service Password Reset can reduce operational overhead while improving security and user productivity.
+This lab demonstrates how Self-Service Password Reset can improve security while reducing operational overhead.
 
-By enabling secure self-service account recovery, organizations can reduce reliance on helpdesk support and strengthen their identity protection strategy.
+By enabling secure self-service account recovery with Microsoft Authenticator and number matching, organizations can reduce password-related support requests while maintaining strong identity verification controls.
 
 ---
 
 # 🧩 Troubleshooting
 
-### Unable to access the password reset portal
+### Unable to reset password
 
 Verify:
 
 - SSPR is enabled for the user.
 - The user is licensed appropriately.
-- The account is not blocked.
-
-### User cannot reset password
-
-Verify:
-
 - Security information has been registered.
-- The required authentication methods are available.
-- Password reset policy applies to the user.
 
-### Authentication method not available
+### Authentication method unavailable
 
 Verify:
 
-- Microsoft Authenticator is registered.
-- A mobile phone number is configured.
-- Email verification is configured where applicable.
+- Microsoft Authenticator is installed.
+- The Authenticator app is registered to the user's account.
+- Internet connectivity is available.
+
+### Number matching approval not received
+
+Verify:
+
+- Push notifications are enabled on the mobile device.
+- Microsoft Authenticator is configured correctly.
+- The device is connected to the internet.
 
 ---
 
 # ✅ Lab Result
 
-Successfully configured and tested Self-Service Password Reset (SSPR) in Microsoft Entra ID, enabling secure account recovery while reducing support overhead and improving the user experience.
+Successfully configured and tested Self-Service Password Reset (SSPR) in Microsoft Entra ID, validating secure account recovery using Microsoft Authenticator and number matching verification.
