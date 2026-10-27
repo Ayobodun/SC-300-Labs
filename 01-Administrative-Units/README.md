@@ -64,13 +64,12 @@ Administrative Units help organizations:
 
 | Step | Action | Screenshot |
 |--------|---------|---------|
-| 1 | Create test users | ![User Creation](Screenshot/users-created.png) |
-| 2 | Create Administrative Unit | `administrative-unit-created.png` |
-| 3 | Add users to Administrative Unit | `au-members.png` |
-| 4 | Assign User Administrator role | `role-assignment.png` |
-| 5 | Verify scoped role assignment | `role-verification.png` |
-| 6 | Test delegated administration | `user-edit-test.png` |
-| 7 | Confirm restricted access | `scope-validation.png` |
+| 1 | Create test users | ![User Creation](Screenshot/acc-creation.png) |
+| 2 | Create Administrative Unit | ![AU Creation](Screenshot/create-AU.png)|
+| 3 | Add users to Administrative Unit | ![Add Users to AU](Screenshot/members-of-AU.png) |
+| 4 | Verify scoped role Password assignment | ![Verify Scope](Screenshot/role-assignment.png) |
+| 5 | Test delegated administration | `user-edit-test.png` |
+| 6 | Confirm restricted access | `scope-validation.png` |
 
 ---
 
