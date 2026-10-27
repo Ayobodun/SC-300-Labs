@@ -79,22 +79,56 @@ The goal of this portfolio is to show practical experience in:
 # 📂 Portfolio Structure
 
 ```text
-SC300-Portfolio
+SC-300-Labs
 │
 ├── 01-Administrative-Units
-├── 02-SSPR
-├── 03-Dynamic-Groups
-├── 04-Enterprise-Applications
-├── 05-Entitlement-Management
-├── 06-Access-Reviews
-├── 07-Lifecycle-Workflows
-├── 08-Conditional-Access
-├── 09-Authentication-Methods
-├── 10-PIM
-├── 11-Guest-Identities
-├── 12-App-Registrations
+│   ├── Screenshot
+│   └── README.md
 │
-└── README.md
+├── 02-SSPR
+│   ├── Screenshot
+│   └── README.md
+│
+├── 03-Dynamic-Groups
+│   ├── Screenshot
+│   └── README.md
+│
+├── 04-Enterprise-Applications
+│   ├── Screenshot
+│   └── README.md
+│
+├── 05-Entitlement-Management
+│   ├── Screenshot
+│   └── README.md
+│
+├── 06-Access-Reviews
+│   ├── Screenshot
+│   └── README.md
+│
+├── 07-Lifecycle-Workflows
+│   ├── Screenshot
+│   └── README.md
+│
+├── 08-Conditional-Access
+│   ├── Screenshot
+│   ├── Policy.json
+│   └── README.md
+│
+├── 09-Authentication-Methods
+│   ├── Screenshot
+│   └── README.md
+│
+├── 10-PIM
+│   ├── Screenshot
+│   └── README.md
+│
+├── 11-Guest-Identities
+│   ├── Screenshot
+│   └── README.md
+│
+└── 12-App-Registrations
+    ├── Screenshot
+    └── README.md
 ```
 # 🔒 Skills Demonstrated
 
