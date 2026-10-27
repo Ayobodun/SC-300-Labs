@@ -64,7 +64,7 @@ Administrative Units help organizations:
 
 | Step | Action | Screenshot |
 |--------|---------|---------|
-| 1 | Create test users | `users-created.png` |
+| 1 | Create test users | ![User Creation](Screenshot/users-created.png) |
 | 2 | Create Administrative Unit | `administrative-unit-created.png` |
 | 3 | Add users to Administrative Unit | `au-members.png` |
 | 4 | Assign User Administrator role | `role-assignment.png` |
