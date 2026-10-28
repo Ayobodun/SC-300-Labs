@@ -6,11 +6,13 @@ This lab demonstrates how to configure Entitlement Management in Microsoft Entra
 
 Entitlement Management enables organizations to manage the access lifecycle by allowing users to request resources through controlled policies. Access packages can bundle resources such as groups, applications, and SharePoint sites, simplifying access provisioning and governance.
 
-In this lab, an access package catalog is created, resources are added, and an access package and policy are configured to demonstrate how organizations can manage access requests and assignments.
+In this lab, I created an access package catalog, added resources, configured an access package and access policy, and tested the access request and approval workflow.
+
+The lab demonstrates how Microsoft Entra ID can support structured access provisioning, approval workflows, and identity governance.
 
 ---
 
-# ⚠️ Real-World Risk
+## ⚠️ Real-World Risk
 
 Without proper identity governance:
 
@@ -22,258 +24,221 @@ Without proper identity governance:
 
 Microsoft Entra Entitlement Management helps organizations:
 
-✅ Centralize access request management
-
-✅ Apply approval workflows to access requests
-
-✅ Standardize resource provisioning
-
-✅ Manage access assignments and expiration
-
-✅ Improve identity governance and compliance
+- ✅ Centralize access request management.
+- ✅ Apply approval workflows to access requests.
+- ✅ Standardize resource provisioning.
+- ✅ Manage access assignments and expiration.
+- ✅ Improve identity governance and compliance.
+- ✅ Support the principle of least privilege.
 
 ---
 
-# 🛠 What I Built
+## 🛠 What I Built
 
-- Created an access package catalog
-- Added resources to the catalog
-- Created an access package
-- Configured resources and resource roles
-- Created an access policy
-- Configured request and approval settings
-- Tested the access package configuration
-- Validated access assignments
+- Created an access package catalog.
+- Added resources to the catalog.
+- Created an access package.
+- Configured resources and resource roles.
+- Created an access policy.
+- Configured request and approval settings.
+- Submitted a test access request.
+- Reviewed the pending approval.
+- Approved the access request.
+- Verified the resulting access package assignment.
 
 ---
 
-# 🏗 Environment
+## 🏗 Environment
 
 ### Microsoft Entra ID Components
 
+- Microsoft Entra ID
 - Microsoft Entra Entitlement Management
 - Access Package Catalogs
 - Access Packages
 - Resource Roles
 - Access Policies
 - Access Requests and Approvals
-- User and Group Assignments
+- Access Package Assignments
 
 ### Access Governance
 
 - Request-based access provisioning
-- Approval workflows, where configured
+- Approval workflows
+- Resource role assignment
 - Assignment lifecycle management
 
 ---
 
-# 📸 Step-by-Step Evidence
+## 📸 Step-by-Step Screenshots
 
-| Step | Action |
-|---|---|
-| 1 | Create an Access Package Catalog |
-| 2 | Add Resources to the Catalog |
-| 3 | Create an Access Package |
-| 4 | Configure Resources and Roles |
-| 5 | Configure the Access Policy |
-| 6 | Test the Access Package |
-| 7 | Validate the Access Assignment |
+The following screenshots document the configuration, access request, approval, and assignment workflow.
 
----
+### 1. Entitlement Management Overview
 
-# 1️⃣ Access Package Catalog Creation
+This screenshot shows the Microsoft Entra Entitlement Management interface used to manage access packages and identity governance.
 
-Created an access package catalog within Microsoft Entra Entitlement Management.
+![Entitlement Management Overview](./Screenshot/01-entitlement-management-dashboard.png)
 
-The catalog acts as a container for organizing resources that can be included in access packages.
+### 2. Access Package Catalog Creation
 
-### Result
+Created an access package catalog to organize resources that can be made available through access packages.
 
-The catalog provides a central location for managing resources used in the access request and provisioning process.
+The catalog provides a central location for managing resources used in access packages.
 
-### Evidence
+![Access Package Catalog Created](./Screenshot/02-catalog-created.png)
 
-📸 Screenshot:
+### 3. Adding Resources to the Catalog
 
-Screenshot/catalog-created.png
+Added resources to the access package catalog so they could be selected when configuring an access package.
 
----
+Resources can include supported groups, applications, and SharePoint sites.
 
-# 2️⃣ Adding Resources to the Catalog
+![Catalog Resources](./Screenshot/03-catalog-resources.png)
 
-Added supported resources to the access package catalog.
+### 4. Access Package Creation
 
-Resources can include groups, enterprise applications, and SharePoint sites, depending on the available configuration and permissions.
+Created an access package within the catalog to group resources into a single package for controlled access provisioning.
 
-### Result
+![Access Package Created](./Screenshot/04-access-package-created.png)
 
-The catalog contains resources that can be selected when creating access packages.
+### 5. Access Package Resource Configuration
 
-### Evidence
-
-📸 Screenshot:
-
-Screenshot/catalog-resources.png
-
----
-
-# 3️⃣ Access Package Creation
-
-Created an access package within the catalog.
-
-An access package combines selected resources into a single package that can be assigned to eligible users through an access policy.
-
-### Result
-
-The access package provides a structured way to manage access to organizational resources without configuring each user's access independently.
-
-### Evidence
-
-📸 Screenshot:
-
-Screenshot/access-package-created.png
-
----
-
-# 4️⃣ Resource and Role Configuration
-
-Configured the resources and associated resource roles within the access package.
+Configured the resources and associated resource roles included in the access package.
 
 Resource roles determine the level of access users receive when the package is assigned.
 
-### Result
+![Access Package Resources](./Screenshot/05-package-resources.png)
 
-The access package is configured to provide the selected resource roles to users who receive the package.
+### 6. Access Policy Configuration
 
-### Evidence
+Configured an access policy to define who could request the access package and how requests would be handled.
 
-📸 Screenshot:
+Depending on the policy configuration, access policies can specify eligible requestors, approval requirements, approvers, and assignment duration.
 
-Screenshot/package-resources-and-roles.png
+![Access Policy](./Screenshot/06-access-policy.png)
 
----
+### 7. Requesting Access to the Package
 
-# 5️⃣ Access Policy Configuration
+Tested the access request workflow by requesting access to the configured access package.
 
-Configured an access policy to define who can request the access package and how requests are handled.
+This demonstrates how users can request access through a defined process rather than relying entirely on manual access assignments.
 
-Depending on the requirements, a policy can specify:
+![Access Package Request](./Screenshot/07-request-access-package.png)
 
-- Eligible users or groups
-- Approval requirements
-- Approvers
-- Assignment duration
-- Access expiration settings
+### 8. Pending Approval
 
-### Result
+Reviewed the access request while it was awaiting approval.
 
-The access policy defines the conditions under which eligible users can request and receive access to the resources included in the package.
+Approval workflows allow designated approvers to review requests before access is granted.
 
-### Evidence
+![Pending Approval](./Screenshot/08-pending-approval.png)
 
-📸 Screenshot:
+### 9. Access Request Approved
 
-Screenshot/access-policy.png
+Verified that the access request was approved through the configured approval workflow.
 
----
+Approval allows the request to proceed through the access package assignment process.
 
-# 6️⃣ Access Package Testing
+![Approved Request](./Screenshot/09-approved-request.png)
 
-Tested the access package configuration to verify that the package and policy were configured as intended.
+### 10. Access Assignment Created
 
-### Validation
+Verified the resulting access package assignment after the request was approved.
 
-- Reviewed the resources included in the package.
-- Checked the policy's eligible requestors.
-- Reviewed approval settings.
-- Confirmed that the access package was available for the intended workflow.
+This demonstrates how Entitlement Management can provision the resources and roles associated with an access package through a controlled assignment workflow.
 
-### Result
-
-The configuration was reviewed to establish whether the access package was ready for testing through the intended request workflow.
-
-### Evidence
-
-📸 Screenshot:
-
-Screenshot/access-package-testing.png
+![Access Assignment Created](./Screenshot/10-assignment-created.png)
 
 ---
 
-# 7️⃣ Access Assignment Validation
+## ⚙️ How Entitlement Management Works
 
-Validated the resulting access assignment after completing a test request or assignment, where available.
+Microsoft Entra Entitlement Management uses several components to control access to organizational resources.
 
-### Validation
+### Access Package Catalog
 
-- Checked the assignment status.
-- Reviewed the resources associated with the package.
-- Verified the assigned resource roles.
-- Confirmed the expected access where testing was possible.
+The catalog organizes resources that can be included in access packages.
 
-### Result
+### Access Package
 
-The assignment demonstrates how Entitlement Management can associate users with approved resources through an access package.
+The access package groups resources and their associated roles into a package that can be assigned to eligible users.
 
-### Evidence
+### Access Policy
 
-📸 Screenshot:
+The access policy defines who can request the package and the conditions under which access is granted.
 
-Screenshot/access-assignment-validation.png
+Depending on the configuration, this may include approval requirements, assignment duration, and expiration settings.
+
+### Access Request
+
+An eligible user requests access to the package through the available request workflow.
+
+### Approval Workflow
+
+If approval is required, the request is reviewed by the configured approver before it proceeds.
+
+### Access Assignment
+
+After the request is approved and provisioning completes, the user receives an assignment to the access package and its configured resources.
 
 ---
 
-# 🔐 Security Validation
+## 🔐 Security Validation
 
-The solution supports:
+The lab focuses on the following security and governance checks:
 
-✅ Centralized access package management
+- ✅ Access package catalog created.
+- ✅ Resources added to the catalog.
+- ✅ Access package configured with the intended resources.
+- ✅ Resource roles reviewed.
+- ✅ Access policy configured.
+- ✅ Access request submitted.
+- ✅ Approval workflow tested.
+- ✅ Approved request reviewed.
+- ✅ Resulting access assignment verified.
 
-✅ Controlled access requests
+### Security Considerations
 
-✅ Approval-based provisioning where configured
+Entitlement Management can help organizations reduce the risk of:
 
-✅ Defined resource roles and permissions
-
-✅ Access assignment lifecycle management
-
-✅ Improved visibility into resource assignments
-
-Entitlement Management can help reduce the risk of:
-
-❌ Inconsistent manual access provisioning
-
-❌ Uncontrolled access requests
-
-❌ Excessive resource permissions
-
-❌ Users retaining access beyond their requirements
+- ❌ Inconsistent manual access provisioning.
+- ❌ Uncontrolled access requests.
+- ❌ Excessive resource permissions.
+- ❌ Users retaining access beyond their requirements.
+- ❌ Poor visibility into access assignments.
 
 **Security note:** These benefits depend on the access package, resource roles, policies, and lifecycle settings configured. Creating an access package alone does not guarantee that unauthorized access is prevented.
 
 ---
 
-# 🧰 Tools & Services Used
+## 🧰 Tools & Services Used
 
 - Microsoft Entra ID
+- Microsoft Entra Admin Center
 - Microsoft Entra Entitlement Management
 - Access Package Catalogs
 - Access Packages
-- Microsoft Entra Admin Center
+- Access Policies
+- Access Requests and Approvals
+- Access Package Assignments
+- GitHub
 
 ---
 
-# 💡 Outcome
+## 💡 Outcome
 
 This lab demonstrates how Microsoft Entra Entitlement Management can simplify identity governance by grouping resources into access packages and applying policies to control how users request and receive access.
 
 By using access packages, organizations can establish a consistent process for resource provisioning, approval workflows, and assignment management.
 
-This approach supports the principle of least privilege by helping organizations grant users the access they require according to defined policies.
+The lab provided practical experience with the access lifecycle, from catalog creation and resource configuration through access requests, approval, and assignment verification.
+
+This approach supports the principle of least privilege by helping organizations grant users access according to defined policies and organizational requirements.
 
 ---
 
-# 🧩 Troubleshooting
+## 🧩 Troubleshooting
 
 ### Resources Not Appearing in the Catalog
 
@@ -283,7 +248,7 @@ Verify:
 - The resource type is supported.
 - The resource is available in the tenant.
 - The account has the required permissions.
-- The resource has been added to the catalog before configuring the package.
+- The resource has been added to the catalog before configuring the access package.
 
 ### Users Cannot Request an Access Package
 
@@ -291,7 +256,7 @@ Verify:
 
 - An applicable access policy exists.
 - The user meets the policy's requestor requirements.
-- The package and policy are configured correctly.
+- The access package and policy are configured correctly.
 - The user is using the appropriate access request portal.
 - The required licensing and permissions are available.
 
@@ -303,6 +268,7 @@ Verify:
 - The configured approver settings.
 - Whether the request is awaiting approval.
 - Whether the approver can access and process the request.
+- Whether the request has been rejected or requires further action.
 
 ### User Does Not Receive the Expected Access
 
@@ -311,13 +277,46 @@ Verify:
 - The access package assignment status.
 - The resources included in the package.
 - The selected resource roles.
-- Whether the request or assignment has completed.
+- Whether the request has been approved.
+- Whether provisioning has completed.
 - Whether additional permissions are required on the target resource.
+
+### Access Package Assignment Is Not Created
+
+Verify:
+
+- The request has reached the appropriate approval state.
+- The access package policy is configured correctly.
+- The requested resources are available.
+- The assignment and provisioning status.
+- Whether any errors are reported in the access package assignment details.
+
+### Approval Settings Are Incorrect
+
+Verify:
+
+- The correct policy has been selected.
+- Approval is enabled if required.
+- The intended approver or approval stage is configured.
+- The policy applies to the intended requestors.
+- The access package has the expected assignment settings.
 
 ---
 
-# ✅ Lab Result
+## ✅ Lab Result
 
-Configured an access package catalog and explored how Microsoft Entra Entitlement Management can organize resources and manage access through access packages and policies.
+Successfully configured an access package catalog and explored how Microsoft Entra Entitlement Management manages access through access packages and policies.
 
-The lab demonstrates how access packages can support structured access requests, resource assignments, and identity governance within Microsoft Entra ID.
+The lab demonstrates the following workflow:
+
+1. Create an access package catalog.
+2. Add resources to the catalog.
+3. Create an access package.
+4. Configure package resources and roles.
+5. Configure an access policy.
+6. Submit an access request.
+7. Review the pending approval.
+8. Approve the request.
+9. Verify the resulting access assignment.
+
+This project demonstrates practical knowledge of Microsoft Entra Entitlement Management, access governance, approval workflows, and access package provisioning.
