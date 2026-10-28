@@ -10,7 +10,7 @@ In this lab, an access review is configured to evaluate user access, collect rev
 
 ---
 
-# ⚠️ Real-World Risk
+## ⚠️ Real-World Risk
 
 Without regular access reviews:
 
@@ -22,31 +22,27 @@ Without regular access reviews:
 
 Microsoft Entra Access Reviews help organizations:
 
-✅ Identify unnecessary access
-
-✅ Review guest user access
-
-✅ Validate group memberships
-
-✅ Support least-privilege access
-
-✅ Improve identity governance and compliance
+- ✅ Identify unnecessary access.
+- ✅ Review guest user access.
+- ✅ Validate group memberships.
+- ✅ Support least-privilege access.
+- ✅ Improve identity governance and compliance.
 
 ---
 
-# 🛠 What I Built
+## 🛠 What I Built
 
-- Configured an Access Review
-- Selected the resource and users to review
-- Configured reviewers
-- Defined review settings
-- Started or scheduled the review
-- Evaluated review decisions
-- Reviewed the resulting access review status
+- Configured an Access Review.
+- Selected the resource and users to review.
+- Configured reviewers.
+- Defined review settings.
+- Started or scheduled the review.
+- Evaluated review decisions.
+- Reviewed the resulting access review status.
 
 ---
 
-# 🏗 Environment
+## 🏗 Environment
 
 ### Microsoft Entra ID Components
 
@@ -67,7 +63,7 @@ Microsoft Entra Access Reviews help organizations:
 
 ---
 
-# 📸 Step-by-Step Evidence
+## 📸 Step-by-Step Evidence
 
 | Step | Action |
 |---|---|
@@ -81,7 +77,7 @@ Microsoft Entra Access Reviews help organizations:
 
 ---
 
-# 1️⃣ Access Reviews Configuration
+## 1️⃣ Access Reviews Configuration
 
 Opened Access Reviews within the Microsoft Entra admin centre.
 
@@ -93,13 +89,11 @@ The Access Reviews area provides the configuration options needed to create and 
 
 ### Evidence
 
-📸 Screenshot:
-
-Screenshot/access-reviews-dashboard.png
+![Access Reviews Dashboard](./Screenshot/01-access-reviews-dashboard.png)
 
 ---
 
-# 2️⃣ Access Review Creation
+## 2️⃣ Access Review Creation
 
 Created an access review and selected the resource or membership type to be reviewed.
 
@@ -111,13 +105,11 @@ The access review defines the access that requires evaluation.
 
 ### Evidence
 
-📸 Screenshot:
-
-Screenshot/access-review-created.png
+![Access Review Created](./Screenshot/02-access-review-created.png)
 
 ---
 
-# 3️⃣ Review Scope Configuration
+## 3️⃣ Review Scope Configuration
 
 Configured the scope of the access review by selecting the relevant resource and users.
 
@@ -129,13 +121,11 @@ The review is configured to evaluate the selected users' access to the specified
 
 ### Evidence
 
-📸 Screenshot:
-
-Screenshot/review-scope.png
+![Review Scope](./Screenshot/03-review-scope.png)
 
 ---
 
-# 4️⃣ Reviewer Configuration
+## 4️⃣ Reviewer Configuration
 
 Configured the reviewer responsible for evaluating whether users should retain their access.
 
@@ -147,24 +137,22 @@ The review process identifies who is responsible for making access decisions.
 
 ### Evidence
 
-📸 Screenshot:
-
-Screenshot/reviewer-configuration.png
+![Reviewer Configuration](./Screenshot/04-reviewer-configuration.png)
 
 ---
 
-# 5️⃣ Access Review Settings
+## 5️⃣ Access Review Settings
 
 Configured the review settings according to the intended governance requirements.
 
 Depending on the available options, settings may include:
 
-- Review frequency
-- Review duration
-- Review start and end dates
-- Decisions required from reviewers
-- Behaviour when reviewers do not respond
-- Whether completed review decisions are automatically applied
+- Review frequency.
+- Review duration.
+- Review start and end dates.
+- Decisions required from reviewers.
+- Behaviour when reviewers do not respond.
+- Whether completed review decisions are automatically applied.
 
 ### Result
 
@@ -172,13 +160,11 @@ The review settings define how the review operates and how its decisions are han
 
 ### Evidence
 
-📸 Screenshot:
-
-Screenshot/review-settings.png
+![Access Review Settings](./Screenshot/05-review-settings.png)
 
 ---
 
-# 6️⃣ Access Review Decision
+## 6️⃣ Access Review Decision
 
 Reviewed the access review entries and evaluated whether the selected users should retain access.
 
@@ -190,13 +176,11 @@ The review records decisions about whether access should be retained or removed.
 
 ### Evidence
 
-📸 Screenshot:
-
-Screenshot/review-decisions.png
+![Access Review Decisions](./Screenshot/06-review-decisions.png)
 
 ---
 
-# 7️⃣ Review Results and Validation
+## 7️⃣ Review Results and Validation
 
 Reviewed the access review results to verify the status of the review and its decisions.
 
@@ -216,45 +200,34 @@ The review provides visibility into access decisions and helps administrators de
 
 ### Evidence
 
-📸 Screenshot:
-
-Screenshot/review-results.png
+![Access Review Results](./Screenshot/07-review-results.png)
 
 ---
 
-# 🔐 Security Validation
+## 🔐 Security Validation
 
 Access Reviews support:
 
-✅ Periodic evaluation of user access
-
-✅ Identification of unnecessary permissions
-
-✅ Review of guest user access
-
-✅ Better visibility into group memberships
-
-✅ Documented access decisions
-
-✅ Access removal when negative decisions are applied
+- ✅ Periodic evaluation of user access.
+- ✅ Identification of unnecessary permissions.
+- ✅ Review of guest user access.
+- ✅ Better visibility into group memberships.
+- ✅ Documented access decisions.
+- ✅ Access removal when negative decisions are applied.
 
 Access Reviews can help reduce the risk of:
 
-❌ Stale access assignments
-
-❌ Former users retaining unnecessary access
-
-❌ Excessive group memberships
-
-❌ Unreviewed guest access
-
-❌ Poor visibility into access governance
+- ❌ Stale access assignments.
+- ❌ Former users retaining unnecessary access.
+- ❌ Excessive group memberships.
+- ❌ Unreviewed guest access.
+- ❌ Poor visibility into access governance.
 
 **Security note:** Creating an access review does not automatically remove access. The outcome depends on reviewer decisions, review settings, permissions, licensing, and whether the resulting decisions are successfully applied.
 
 ---
 
-# 🧰 Tools & Services Used
+## 🧰 Tools & Services Used
 
 - Microsoft Entra ID
 - Microsoft Entra ID Governance
@@ -264,7 +237,7 @@ Access Reviews can help reduce the risk of:
 
 ---
 
-# 💡 Outcome
+## 💡 Outcome
 
 This lab demonstrates how Microsoft Entra Access Reviews can help organizations maintain appropriate access to organizational resources.
 
@@ -274,7 +247,7 @@ Access Reviews support the principle of least privilege by helping ensure that u
 
 ---
 
-# 🧩 Troubleshooting
+## 🧩 Troubleshooting
 
 ### Unable to Create an Access Review
 
@@ -315,7 +288,7 @@ Verify:
 
 ---
 
-# ✅ Lab Result
+## ✅ Lab Result
 
 Configured an Access Review in Microsoft Entra ID to evaluate user access to organizational resources.
 
