@@ -42,8 +42,7 @@ Dynamic Groups help organisations:
 - Validated the membership rule.
 - Verified automatic group membership.
 - Tested membership changes following user attribute updates.
-- Documented the configuration using JSON.
-- Structured the lab for CSV exports, validation evidence, and PowerShell automation.
+- Documented the group configuration in JSON.
 
 ---
 
@@ -77,7 +76,7 @@ These test accounts represent users whose country attribute is configured to mat
 
 ---
 
-## 📸 Step-by-Step Evidence
+## 📸 Step-by-Step Screenshots
 
 The following screenshots document the group creation, configuration, and validation process.
 
@@ -97,7 +96,7 @@ This screenshot documents the creation of the Dynamic Security Group.
 
 This screenshot shows the membership rule configured for the group.
 
-Example rule:
+**Membership rule:**
 
 `(user.country -eq "Singapore")`
 
@@ -129,85 +128,17 @@ The membership rule used in this lab is:
 - `-eq` checks whether the attribute equals the specified value.
 - `"Singapore"` is the value users must match to satisfy the rule.
 
-Microsoft Entra ID evaluates the rule and updates group membership according to the users' attributes.
+Microsoft Entra ID evaluates the rule and updates group membership according to users' attributes.
 
-Users who match the rule become eligible for membership. Users who no longer match can be removed after dynamic membership processing completes.
+Users who match the rule become members of the group. Users who no longer match can be removed after dynamic membership processing completes.
 
-### Configuration Evidence
+### Configuration File
 
 The configuration is documented in:
 
-`Evidence/Configuration/dynamic-membership-rule.json`
+`Config/dynamic-membership-rule.json`
 
 This file records the intended group configuration and membership rule for documentation and reference.
-
----
-
-## 📊 Evidence and Exports
-
-The lab uses a structured evidence layout to separate screenshots, exported data, configuration documentation, validation results, and automation scripts.
-
-### CSV Exports
-
-The `Evidence/Exports/` directory is intended to contain the following files:
-
-**`dynamic-groups.csv`**
-
-Contains exported information about dynamic groups, including:
-
-- Group ID
-- Display Name
-- Description
-- Group Type
-- Security Enabled
-- Membership Rule
-- Membership Rule Processing State
-
-**`dynamic-group-members.csv`**
-
-Contains exported group membership information, including:
-
-- Group ID
-- Group Name
-- User ID
-- Display Name
-- User Principal Name
-- Email Address
-
-These files should contain actual data exported from the test environment.
-
-### Configuration
-
-Location:
-
-`Evidence/Configuration/dynamic-membership-rule.json`
-
-Documents the dynamic group's configuration and membership rule.
-
-### Validation
-
-Location:
-
-`Evidence/Validation/validation-results.md`
-
-The validation report should document:
-
-- The membership rule tested.
-- The test users evaluated.
-- Expected membership.
-- Actual membership.
-- Any discrepancies identified.
-- The final validation result.
-
-### PowerShell Automation
-
-Location:
-
-`Scripts/Export-DynamicGroups.ps1`
-
-This script is intended to export dynamic group configuration and membership data using Microsoft Graph PowerShell.
-
-The script must be implemented and tested before it can generate the CSV exports.
 
 ---
 
@@ -223,7 +154,7 @@ The lab focuses on the following checks:
 
 Dynamic membership processing may take time. Changes to user attributes do not necessarily result in immediate membership updates.
 
-The final validation status should reflect the results observed in the test environment.
+The validation results should reflect what was actually observed in the test environment.
 
 ---
 
@@ -233,9 +164,6 @@ The final validation status should reflect the results observed in the test envi
 - Microsoft Entra Admin Center
 - Dynamic Security Groups
 - Dynamic Membership Rules
-- PowerShell
-- Microsoft Graph PowerShell
-- CSV
 - JSON
 - GitHub
 
@@ -247,7 +175,7 @@ This lab demonstrates how Dynamic Groups can simplify identity administration by
 
 Using attribute-based membership rules can reduce manual administration, improve consistency, and support scalable identity management.
 
-The lab also establishes a foundation for exporting identity data, documenting configurations, and automating administrative tasks with PowerShell.
+The lab reinforces my understanding of dynamic membership rules, user attributes, and automated identity lifecycle management in Microsoft Entra ID.
 
 ---
 
@@ -280,40 +208,6 @@ Verify:
 - The group is configured for dynamic user membership.
 - The user still satisfies the membership rule.
 
-### CSV Export Fails
-
-Verify:
-
-- Microsoft Graph PowerShell is installed.
-- Authentication succeeds.
-- The account has the required permissions.
-- The required Microsoft Graph consent has been granted.
-
----
-
-## 📁 Repository Structure
-
-```text
-03-Dynamic-Groups/
-├── README.md
-├── Screenshot/
-│   ├── dynamic-groups-dashboard.png
-│   ├── dynamic-group-created.png
-│   ├── dynamic-membership-rule.png
-│   ├── dynamic-rule-validation.png
-│   └── dynamic-group-members.png
-├── Evidence/
-│   ├── Exports/
-│   │   ├── dynamic-groups.csv
-│   │   └── dynamic-group-members.csv
-│   ├── Configuration/
-│   │   └── dynamic-membership-rule.json
-│   └── Validation/
-│       └── validation-results.md
-└── Scripts/
-    └── Export-DynamicGroups.ps1
-```
-
 ---
 
 ## ✅ Lab Result
@@ -322,4 +216,4 @@ Implemented and documented a Dynamic Security Group configuration in Microsoft E
 
 The lab demonstrates how attribute-based membership rules can automate group membership management and reduce reliance on manual administration.
 
-Screenshots, configuration documentation, CSV exports, validation results, and PowerShell automation provide supporting evidence as each artefact is created and verified.
+Screenshots and the JSON configuration file provide supporting documentation for the lab.
