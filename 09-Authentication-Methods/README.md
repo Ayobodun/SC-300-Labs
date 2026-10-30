@@ -137,7 +137,8 @@ When using TAP, administrators should ensure that:
 
 **Screenshot:**
 
-![Temporary Access Pass](./Screenshot/06-temporary-access-pass.png)
+![Temporary Access Pass Sign-In](./Screenshot/07-temporary-access-pass.png)
+
 
 ---
 
@@ -151,11 +152,11 @@ This process demonstrates how TAP can support initial authentication method regi
 
 The exact experience depends on the configuration of the tenant, the user account, and the authentication method being registered.
 
-**Security note:** Temporary Access Pass codes are sensitive credentials. They must never be included in screenshots committed to a public repository.
+
 
 **Screenshot:**
 
-![Temporary Access Pass Sign-In](./Screenshot/07-temporary-access-pass.png)
+![Temporary Access Pass](./Screenshot/06-temporary-access-pass.png)
 
 ---
 
