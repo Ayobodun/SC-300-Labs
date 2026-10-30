@@ -2,9 +2,9 @@
 
 ## 📌 Overview
 
-This lab focuses on managing guest identities and external collaboration in Microsoft Entra ID.
+This lab explores guest identity management and external collaboration in Microsoft Entra ID.
 
-Microsoft Entra B2B collaboration allows organisations to work securely with external users, such as contractors, suppliers, business partners, and consultants, by granting them access to selected organisational resources.
+Microsoft Entra B2B collaboration allows organisations to work securely with external users, including contractors, suppliers, consultants, and business partners, by providing access to selected organisational resources.
 
 The objective of this lab was to understand how guest users are invited, managed, and governed while maintaining appropriate security controls over external access.
 
@@ -25,7 +25,7 @@ Microsoft Entra ID provides controls that help organisations manage external ide
 
 ---
 
-## 🛠️ What I Built
+## 🛠️ What I Explored
 
 In this lab, I explored guest identity management and external collaboration in Microsoft Entra ID.
 
@@ -34,129 +34,146 @@ The lab covered:
 - Reviewing guest users in the Microsoft Entra admin centre.
 - Exploring external collaboration settings.
 - Understanding Microsoft Entra B2B collaboration.
-- Creating or inviting a test guest user where permitted.
+- Exploring the guest invitation process.
 - Reviewing guest user properties.
-- Exploring how guest users can be assigned to groups.
-- Reviewing external user access and permissions.
-- Understanding guest invitation restrictions.
+- Understanding guest group membership and resource access.
 - Exploring access reviews for guest users where available.
-- Reviewing guest account lifecycle and access removal considerations.
+- Understanding guest account lifecycle management.
+- Reviewing security considerations for external collaboration.
 
 ---
 
 ## 🧪 Environment
 
 - Microsoft Entra ID
-- External identities
+- Microsoft Entra External Identities
 - Microsoft Entra B2B collaboration
-- Test guest account
-- Microsoft Entra groups
+- Microsoft Entra users and groups
 - Microsoft Entra admin centre
+- Access reviews, where available
 
 ---
 
 ## 📸 Step-by-Step Evidence
 
-### 1. Guest Users Dashboard
-
-Opened the Users area in the Microsoft Entra admin centre and reviewed the directory's guest accounts.
-
-Reviewed how guest users are identified and managed separately from member users.
-
-**Screenshot:** `Screenshot/guest-users-dashboard.png`
-
----
-
-### 2. External Collaboration Settings
+### 1. External Collaboration Settings
 
 Reviewed the external collaboration settings in Microsoft Entra ID.
 
-These settings help administrators control aspects of external user invitations and collaboration.
+These settings help administrators control how external users collaborate with an organisation and who is permitted to invite guest users.
 
-Depending on the tenant configuration, options may include:
+Depending on the tenant configuration, administrators may be able to manage guest invitation permissions and restrictions on external collaboration.
 
-- Who can invite guest users.
-- Restrictions on guest invitations.
-- Collaboration with external organisations.
-- Controls relating to external user access.
+Restricting guest invitations to authorised users can help reduce the risk of unauthorised external access.
 
-**Screenshot:** `Screenshot/external-collaboration-settings.png`
+**Screenshot:**
+
+![External Collaboration Settings](./Screenshot/external-collaboration-settings.png)
+
+---
+
+### 2. Guest Access Review
+
+Explored the access review functionality available in Microsoft Entra ID.
+
+Access reviews help organisations periodically evaluate whether users should retain access to groups, applications, and other supported resources.
+
+For external collaboration, access reviews can help determine whether guest users still require access after a project ends or their business responsibilities change.
+
+The available functionality depends on tenant licensing, configuration, and administrator permissions.
+
+**Screenshot:**
+
+![Guest Access Review](./Screenshot/guest-access-review.png)
 
 ---
 
 ### 3. Guest User Invitation
 
-Created or invited a designated test guest user where permitted.
+Reviewed the guest user invitation process in Microsoft Entra ID.
 
-Reviewed the invitation process and the information required to invite an external identity.
+Microsoft Entra B2B collaboration allows an organisation to invite an external user into its directory so that the user can collaborate with internal users and access permitted resources.
 
-**Screenshot:** `Screenshot/guest-user-invitation.png`
+Guest invitations should be issued only when there is a legitimate business requirement. Administrators should also verify that the intended external identity is being invited.
+
+**Screenshot:**
+
+![Guest User Invitation](./Screenshot/guest-user-invitation.png)
 
 ---
 
 ### 4. Guest User Properties
 
-Opened the test guest account and reviewed its directory properties.
+Opened a guest user account and reviewed its directory properties.
 
-Examined how the account is represented in the directory and how administrators can identify its guest user type.
+Microsoft Entra ID distinguishes guest users from member users through the account's user type and other directory attributes.
 
-**Screenshot:** `Screenshot/guest-user-properties.png`
+Reviewing guest user properties helps administrators identify external identities and understand how they are represented within the organisation's directory.
 
----
+**Screenshot:**
 
-### 5. Guest Group Membership
-
-Reviewed how a guest user can be added to an appropriate group.
-
-Group membership can help control access to applications and resources, so external users should only receive the permissions required for their responsibilities.
-
-**Screenshot:** `Screenshot/guest-group-membership.png`
+![Guest User Properties](./Screenshot/guest-user-properties.png)
 
 ---
 
-### 6. Guest Access Permissions
+### 5. Guest Users Dashboard
 
-Reviewed the permissions and access considerations applicable to guest users.
+Reviewed the users list in Microsoft Entra ID to understand how guest accounts appear alongside other directory users.
 
-The goal was to understand how organisations can limit external access to the resources required for collaboration.
+The users list provides administrators with a central location to identify guest accounts and access their properties.
 
-**Screenshot:** `Screenshot/guest-access-permissions.png`
+Regular reviews of guest accounts can help organisations identify external identities that may no longer require access.
 
----
+**Screenshot:**
 
-### 7. Guest Access Review
-
-Explored access reviews for guest users where the required features and licensing were available.
-
-Access reviews help organisations periodically determine whether external users should retain access to selected resources.
-
-**Screenshot:** `Screenshot/guest-access-review.png`
+![Guest Users Dashboard](./Screenshot/guest-users-dashboard.png)
 
 ---
 
-### 8. Guest Account Lifecycle
+## 👥 Guest Group Membership and Resource Access
 
-Reviewed the lifecycle considerations for external identities, including when access should be reviewed or removed.
+Guest users may be assigned to groups or granted access to specific applications and resources when required.
 
-For example, a guest account may need to be disabled or removed when a contractor's engagement ends.
+Group membership can simplify access management by allowing permissions to be assigned to a group rather than individually to every user.
 
-**Screenshot:** `Screenshot/guest-account-lifecycle.png`
+However, guest users should only receive the permissions required for their responsibilities. Administrators should review group memberships and resource assignments to identify unnecessary access.
+
+In a production environment, guest access should be reviewed whenever a user's responsibilities change or their engagement with the organisation ends.
+
+---
+
+## 🔄 Guest Account Lifecycle Management
+
+Guest identity lifecycle management involves managing external users throughout their relationship with an organisation.
+
+Important lifecycle considerations include:
+
+- **Invitation:** Invite external users only when there is a valid business requirement.
+- **Onboarding:** Ensure guest users receive only the access needed for their responsibilities.
+- **Access review:** Periodically evaluate whether guest users still require access to organisational resources.
+- **Access changes:** Update group memberships and permissions when responsibilities change.
+- **Offboarding:** Remove or disable access when a guest's engagement ends, following organisational procedures.
+- **Ongoing governance:** Maintain appropriate records and review external identities regularly.
+
+Access reviews and account removal are related but different controls. An access review helps determine whether access should continue, while disabling or deleting an account is a separate administrative action.
+
+Automated identity lifecycle processes may require additional Microsoft Entra capabilities and licensing. This lab focuses on understanding the available guest identity management and governance controls rather than claiming that automated lifecycle workflows were implemented.
 
 ---
 
 ## 🔐 Security Validation
 
-The following security considerations were reviewed during the lab:
+The following security considerations are important when managing guest identities:
 
 - Restrict guest invitations to authorised users where appropriate.
-- Grant guest users only the permissions required for their work.
+- Apply the principle of least privilege.
 - Review external collaboration settings regularly.
 - Monitor guest account activity where appropriate.
 - Use access reviews to evaluate whether guest access remains necessary.
-- Remove or disable guest access when the business requirement ends.
 - Review group memberships and application permissions.
-- Apply appropriate controls before sharing sensitive organisational resources.
+- Remove or disable access when the business requirement ends.
 - Avoid granting guest users unnecessary directory roles.
+- Apply appropriate controls before sharing sensitive organisational resources.
 - Test configuration changes before applying them broadly.
 
 ---
@@ -167,16 +184,22 @@ The following security considerations were reviewed during the lab:
 - Microsoft Entra External Identities
 - Microsoft Entra B2B collaboration
 - Microsoft Entra users and groups
-- Access reviews
-- External collaboration settings
+- Microsoft Entra access reviews
 
 ---
 
-## 📈 Outcome
+## 📈 Key Learnings
 
-This lab developed my understanding of guest identity management and external collaboration in Microsoft Entra ID.
+This lab developed my understanding of:
 
-It reinforced the importance of restricting guest invitations, applying least privilege, reviewing external access, and managing guest accounts throughout their lifecycle.
+- How Microsoft Entra B2B collaboration supports external users.
+- How guest identities are represented in Microsoft Entra ID.
+- How external collaboration settings influence guest invitations.
+- Why guest users should receive only the permissions they require.
+- How groups can help manage access to organisational resources.
+- How access reviews support external identity governance.
+- Why guest accounts should be reviewed throughout their lifecycle.
+- The importance of removing access when an external user's business requirement ends.
 
 ---
 
@@ -194,7 +217,7 @@ It reinforced the importance of restricting guest invitations, applying least pr
 - Confirm that the guest invitation has been accepted where required.
 - Check the guest user's group memberships.
 - Review the permissions assigned to the resource.
-- Check any applicable Conditional Access policies.
+- Check applicable Conditional Access policies.
 - Review sign-in logs for additional information.
 
 ### Guest User Has Excessive Access
@@ -215,6 +238,10 @@ It reinforced the importance of restricting guest invitations, applying least pr
 
 ## 🏁 Lab Result
 
-**Status:** Document the result after completing and validating the lab.
+This lab documents my exploration of Microsoft Entra guest identities and external collaboration, including guest invitation settings, guest user properties, access reviews, and guest account management.
 
-This lab demonstrates practical knowledge of Microsoft Entra guest identities, B2B collaboration, external collaboration settings, guest access management, and external identity governance.
+It reinforced the importance of restricting external invitations, applying least privilege, reviewing permissions, and managing guest identities throughout their relationship with an organisation.
+
+The lab forms part of my Microsoft Entra ID identity and access management portfolio.
+
+---
