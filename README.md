@@ -37,7 +37,7 @@ Certifications
 
 ✅ Microsoft Certified: Azure AI Fundamentals (AI-900)
 🔗 **View Certification Badge**
-[AZ-104 Certification](https://learn.microsoft.com/api/credentials/share/en-us/AyobodunAyowole-2203/4DB6DD981FD51197?sharingId=50C0D975EFDCA9BB)
+[AI-900 Certification](https://learn.microsoft.com/api/credentials/share/en-us/AyobodunAyowole-2203/4DB6DD981FD51197?sharingId=50C0D975EFDCA9BB)
 
 ✅ Microsoft Certified: Identity and Access Administrator Associate (SC-300)
 🔗 **View Certification Badge**
