@@ -77,7 +77,7 @@ The registration process includes selecting an application name and supported ac
 
 **Screenshot:**
 
-![App Registration Created](./Screenshot/app-registration-created.png)
+![App Registration Created](./Screnshot/app-registration-created.png)
 
 ---
 
@@ -95,7 +95,7 @@ These identifiers serve different purposes and should not be treated as intercha
 
 **Screenshot:**
 
-![App Registration Overview](./Screenshot/app-registration-overview.png)
+![App Registration Overview](./Screnshot/app-registration-overview.png)
 
 ---
 
@@ -111,7 +111,7 @@ Reviewing configured permissions helps administrators understand what an applica
 
 **Screenshot:**
 
-![App API Permissions](./Screenshot/app-api-permissions.png)
+![App API Permissions](./Screnshot/app-api-permissions.png)
 
 ---
 
@@ -133,7 +133,7 @@ Understanding this distinction helps administrators select an appropriate permis
 
 **Screenshot:**
 
-![Delegated and Application Permissions](./Screenshot/delegated-vs-application-permissions.png)
+![Delegated and Application Permissions](./Screnshot/delegated-vs-application-permissions.png)
 
 ---
 
@@ -155,7 +155,7 @@ The presence of an admin consent control does not mean that consent has been gra
 
 **Screenshot:**
 
-![App Admin Consent](./Screenshot/app-admin-consent.png)
+![App Admin Consent](./Screnshot/app-admin-consent.png)
 
 ---
 
@@ -171,7 +171,7 @@ Understanding the relationship between app registrations and enterprise applicat
 
 **Screenshot:**
 
-![Enterprise Application Overview](./Screenshot/enterprise-application-overview.png)
+![Enterprise Application Overview](./Screnshot/enterprise-application-overview.png)
 
 ---
 
