@@ -2,11 +2,11 @@
 
 ## 📌 Overview
 
-This lab focuses on Microsoft Entra Privileged Identity Management (PIM), a service that helps organisations manage, control, and monitor privileged access to important resources.
+This lab explores Microsoft Entra Privileged Identity Management (PIM), a service that helps organisations manage, control, and monitor privileged access to important resources.
 
-PIM enables administrators to manage privileged role assignments using eligible and active assignments, time-bound access, approval requirements, and activation controls where supported.
+PIM enables organisations to manage privileged role assignments through eligible and active assignments, time-bound access, and activation controls where supported.
 
-The objective of this lab was to understand how PIM reduces standing administrative privileges and supports the principle of least privilege.
+The objective of this lab is to understand how PIM can reduce standing administrative privileges and support the principle of least privilege.
 
 ---
 
@@ -20,25 +20,23 @@ Permanent administrative access can expose organisations to significant security
 - Limited visibility into privileged role activation.
 - Increased risk from unused or unnecessary administrator accounts.
 
-PIM helps reduce these risks by allowing organisations to control when privileged access is granted and monitor how administrative roles are used.
+PIM helps mitigate these risks by allowing organisations to control privileged access and monitor how administrative roles are assigned and used.
 
 ---
 
-## 🛠️ What I Built
+## 🛠️ What I Explored
 
 In this lab, I explored privileged role management in Microsoft Entra ID.
 
-The lab covered:
+The lab covers:
 
 - Reviewing the PIM dashboard.
 - Exploring Microsoft Entra roles.
-- Understanding eligible versus active role assignments.
-- Reviewing role assignment settings.
-- Configuring or examining activation requirements where available.
-- Exploring multifactor authentication requirements for role activation.
-- Reviewing approval and justification settings where supported.
-- Activating an eligible role using a designated test account, where available.
-- Reviewing role activation history and audit information.
+- Understanding eligible and active role assignments.
+- Reviewing role activation settings.
+- Exploring privileged role activation requirements.
+- Understanding how role assignments can be validated.
+- Reviewing PIM audit and activation history where available.
 
 ---
 
@@ -46,8 +44,8 @@ The lab covered:
 
 - Microsoft Entra ID
 - Privileged Identity Management (PIM)
-- Microsoft Entra roles
-- Designated test administrator account
+- Microsoft Entra directory roles
+- Designated test account, where available
 - Microsoft Entra audit logs
 
 ---
@@ -58,119 +56,153 @@ The lab covered:
 
 Opened the Privileged Identity Management area in the Microsoft Entra admin centre and reviewed the available management options.
 
-**Screenshot:** `Screenshot/pim-dashboard.png`
+The PIM dashboard provides an entry point for managing privileged access and reviewing available governance features.
+
+**Screenshot:**
+
+![PIM Dashboard](./Screenshot/pim-dashboard.png)
 
 ---
 
 ### 2. Microsoft Entra Roles
 
-Opened the Microsoft Entra roles area in PIM and reviewed the available directory roles.
+Opened the Microsoft Entra roles section in PIM and reviewed the available directory role management options.
 
-The roles available for assignment depend on the tenant configuration and the permissions of the administrator performing the task.
+Microsoft Entra roles control access to administrative functions and resources. The roles available for management depend on tenant licensing, configuration, and the permissions of the signed-in administrator.
 
-**Screenshot:** `Screenshot/pim-entra-roles.png`
+**Screenshot:**
 
----
-
-### 3. Eligible Role Assignment
-
-Reviewed eligible role assignments and explored how a user can be assigned a role that they activate only when required.
-
-Eligible assignments help reduce unnecessary standing administrative access.
-
-**Screenshot:** `Screenshot/eligible-role-assignment.png`
+![Microsoft Entra Roles](./Screenshot/pim-entra-roles.png)
 
 ---
 
-### 4. Active Role Assignment
+### 3. Eligible Role Assignments
 
-Reviewed active role assignments and compared them with eligible assignments.
+Reviewed the eligible role assignments section to understand how users can be assigned administrative roles that they activate when required.
 
-An active assignment provides the role's privileges while the assignment is active, subject to the role and applicable access controls.
+Eligible assignments support just-in-time access by allowing privileged permissions to be activated when needed rather than remaining permanently active.
 
-**Screenshot:** `Screenshot/active-role-assignment.png`
+**Screenshot:**
+
+![Eligible Role Assignments](./Screenshot/eligible-role-assignment.png)
+
+---
+
+### 4. Active Role Assignments
+
+Reviewed the active role assignments section and compared it with eligible role assignments.
+
+An active assignment provides the assigned role's privileges while the assignment is active, subject to the role and applicable access controls.
+
+This comparison helps demonstrate the difference between standing administrative access and eligible access that requires activation.
+
+**Screenshot:**
+
+![Active Role Assignments](./Screenshot/active-role-assignment.png)
 
 ---
 
 ### 5. Role Activation Settings
 
-Reviewed the activation settings available for a selected role.
+Reviewed the activation settings available for a selected Microsoft Entra role.
 
-Depending on the configuration and supported features, activation requirements may include:
+Depending on the role, tenant configuration, and available features, activation settings may include:
 
-- Multifactor authentication.
-- Providing a justification.
-- Entering a ticket or change-request reference.
-- Obtaining approval.
-- Limiting the activation duration.
+- Multifactor authentication requirements.
+- Justification for activation.
+- Ticket or change-request information.
+- Approval requirements.
+- Maximum activation duration.
 
-**Screenshot:** `Screenshot/role-activation-settings.png`
+These controls help organisations ensure that privileged access is granted according to their security requirements.
+
+**Screenshot:**
+
+![Role Activation Settings](./Screenshot/role-activation-setting.png)
 
 ---
 
 ### 6. Role Activation
 
-Used a designated test account to activate an eligible role, where permitted.
+Reviewed the role activation experience for an eligible assignment, where available.
 
-Reviewed the activation process and the requirements presented before the role became active.
+The activation process may require the user to satisfy configured requirements before privileged permissions become active.
 
-**Screenshot:** `Screenshot/role-activation.png`
+This step helps demonstrate how eligible role assignments can support controlled, just-in-time administrative access.
+
+**Screenshot:**
+
+![Role Activation](./Screenshot/role-activation.png)
 
 ---
 
 ### 7. Role Assignment Validation
 
-Reviewed the role assignment after activation to determine whether the expected status and duration were displayed.
+Reviewed the role assignment information to understand how administrators can verify its status and duration.
 
-The validation process helps confirm that the assignment behaves as intended.
+Validation can include checking whether an assignment is eligible or active, confirming the assigned role, and reviewing the relevant activation period.
 
-**Screenshot:** `Screenshot/role-assignment-validation.png`
+Where role activation was completed, the resulting assignment status can be used to help confirm that the activation behaved as expected.
 
----
+**Screenshot:**
 
-### 8. Audit and Activation History
-
-Reviewed available PIM history and audit information to understand how privileged role assignments and activation events can be investigated.
-
-Audit information can help administrators investigate unexpected privileged access and support security reviews.
-
-**Screenshot:** `Screenshot/pim-audit-history.png`
+![Role Assignment Validation](./Screenshot/active-role-assignment.png)
 
 ---
 
-## 🔐 Security Validation
+### 8. PIM Audit and Activation History
 
-The following security considerations were reviewed during the lab:
+Reviewed the available PIM history and audit information to understand how privileged role assignments and activation events can be investigated.
 
-- Use eligible assignments instead of permanent active assignments where appropriate.
+Audit information can help administrators investigate unexpected privileged access, review administrative activity, and support security assessments.
+
+The available records depend on the actions performed, tenant configuration, and the audit information accessible to the administrator.
+
+**Screenshot:**
+
+![PIM Audit and Activation History](./Screenshot/pim-audit-history.png)
+
+---
+
+## 🔐 Security Considerations
+
+Key security considerations associated with privileged identity management include:
+
+- Prefer eligible assignments over permanently active assignments where appropriate.
 - Apply the principle of least privilege.
-- Require MFA for privileged role activation where supported and appropriate.
+- Require multifactor authentication for privileged role activation where supported and appropriate.
 - Configure approval and justification requirements according to organisational risk.
 - Use time-limited role assignments and activation durations where possible.
 - Review privileged role assignments regularly.
 - Monitor activation history and audit events.
-- Avoid making unnecessary permanent assignments to highly privileged roles.
+- Avoid unnecessary permanent assignments to highly privileged roles.
 - Use designated test accounts and follow change-management procedures.
 
-**Important:** Do not assign highly privileged roles to ordinary accounts or change production role settings without authorisation. Use a controlled test environment and the minimum permissions necessary.
+Highly privileged roles should only be assigned or activated when authorised and necessary. Testing should be performed in a controlled environment using the minimum permissions required.
 
 ---
 
 ## 🧰 Tools & Services Used
 
 - Microsoft Entra admin centre
-- Privileged Identity Management (PIM)
+- Microsoft Entra Privileged Identity Management (PIM)
 - Microsoft Entra directory roles
 - Microsoft Entra audit logs
 - Multifactor authentication (MFA)
 
 ---
 
-## 📈 Outcome
+## 📈 Key Learnings
 
-This lab developed my understanding of privileged identity management and how Microsoft Entra PIM can reduce standing administrative privileges.
+This lab developed my understanding of:
 
-It also reinforced the importance of eligible role assignments, just-in-time access, activation requirements, time-bound privileges, and audit monitoring.
+- How Microsoft Entra PIM supports privileged access management.
+- The differences between eligible and active role assignments.
+- How just-in-time access can reduce standing administrative privileges.
+- The purpose of role activation settings.
+- How privileged role assignments can be reviewed and validated.
+- How audit information supports privileged access investigations.
+- Why least privilege and regular access reviews are important for identity security.
 
 ---
 
@@ -181,7 +213,7 @@ It also reinforced the importance of eligible role assignments, just-in-time acc
 - Check whether the tenant has the required licensing.
 - Confirm that the signed-in administrator has sufficient permissions.
 - Verify that the correct Microsoft Entra tenant is selected.
-- Review the available PIM options in the admin centre.
+- Review the PIM options available in the admin centre.
 
 ### Unable to Assign a Role
 
@@ -200,7 +232,7 @@ It also reinforced the importance of eligible role assignments, just-in-time acc
 ### Role Activation Does Not Appear as Expected
 
 - Refresh the role assignment view.
-- Confirm that activation completed successfully.
+- Confirm whether activation completed successfully.
 - Review PIM history and available audit information.
 - Verify that the expected role and account were used.
 
@@ -208,6 +240,8 @@ It also reinforced the importance of eligible role assignments, just-in-time acc
 
 ## 🏁 Lab Result
 
-**Status:** Document the result after completing and validating the lab.
+This lab documents an exploration of Microsoft Entra Privileged Identity Management, including directory role management, eligible and active assignments, activation settings, role assignment validation, and audit history.
 
-This lab demonstrates practical knowledge of Microsoft Entra Privileged Identity Management, eligible and active role assignments, privileged role activation, and administrative access governance.
+It reinforces how PIM can support just-in-time privileged access, reduce unnecessary standing administrative privileges, and improve visibility into administrative access.
+
+**Validation status:** The screenshots document the sections explored. Any role assignment, configuration change, or successful activation should only be reported as completed when it has been verified in the tenant.
