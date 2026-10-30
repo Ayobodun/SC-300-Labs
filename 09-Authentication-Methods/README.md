@@ -1,206 +1,218 @@
 # Microsoft Entra ID – Authentication Methods & Passwordless Authentication
 
-## 📌 Overview
+## 🧩 Overview
 
-This lab focuses on Microsoft Entra ID authentication methods and how organisations configure secure, user-friendly ways for employees to verify their identities.
+This lab explores authentication methods in Microsoft Entra ID, focusing on authentication method policies, Microsoft Authenticator, user authentication method management, security information registration, and Temporary Access Pass (TAP).
 
-Authentication methods are an important part of identity security because they help protect accounts against unauthorised access, phishing, and credential theft.
+Authentication methods help organisations secure user identities, support Multi-Factor Authentication (MFA), and provide users with secure ways to authenticate or register additional authentication methods.
 
-The objective of this lab is to explore authentication method policies, understand how authentication methods are managed, and investigate how users register and use supported authentication methods.
+In this lab, I explored the authentication methods configuration in Microsoft Entra ID, reviewed the Microsoft Authenticator policy, examined a test user's authentication methods, explored the user-facing security information registration experience, and worked with Temporary Access Pass.
 
----
+The lab demonstrates how administrators can manage authentication methods and investigate authentication-related activity in Microsoft Entra ID.
 
-## 🎯 Real-World Security Risk
+## 🎯 Objectives
 
-Poorly managed authentication methods can expose organisations to several security risks, including:
+- Explore authentication method policies in Microsoft Entra ID.
+- Review the Microsoft Authenticator authentication method policy.
+- Examine authentication methods assigned to a designated test user.
+- Understand the user-facing security information registration process.
+- Explore Temporary Access Pass (TAP) and its role in authentication method registration.
+- Understand how Microsoft Entra sign-in logs can help investigate authentication activity.
+- Identify security considerations when managing authentication methods.
 
-- Compromised accounts due to stolen or reused passwords.
-- Users relying on weak authentication methods.
-- Inconsistent authentication requirements across the organisation.
-- Users being unable to access resources because their authentication methods are not configured correctly.
-- Increased exposure to phishing and social engineering attacks.
-
-Microsoft Entra ID provides authentication method management capabilities that help administrators improve identity security and support stronger authentication experiences.
-
----
-
-## 🛠️ What I Built
-
-In this lab, I explored authentication method management in Microsoft Entra ID.
-
-The lab covered:
-
-- Reviewing the Authentication Methods policy area.
-- Exploring available authentication methods.
-- Reviewing the Microsoft Authenticator configuration.
-- Examining methods such as SMS, voice calls, and FIDO2 security keys where available.
-- Reviewing authentication method policy settings.
-- Understanding how users register authentication methods.
-- Reviewing user authentication method information.
-- Understanding the relationship between authentication methods and multifactor authentication (MFA).
-
----
-
-## 🧪 Environment
+## 🛠️ Technologies Used
 
 - Microsoft Entra ID
-- Authentication Methods
 - Microsoft Authenticator
-- Test user accounts
-- Microsoft Entra admin centre
+- Multi-Factor Authentication (MFA)
+- Temporary Access Pass (TAP)
+- Microsoft Entra Sign-in Logs
+- Microsoft Entra Security Info registration
 
 ---
 
-## 📸 Step-by-Step Evidence
+## 🧪 Step-by-Step Implementation
 
 ### 1. Authentication Methods Dashboard
 
-Opened the Authentication Methods area in the Microsoft Entra admin centre and reviewed the available authentication method policies.
+Navigated to the Microsoft Entra admin centre and opened the Authentication Methods section.
 
-**Screenshot:** `Screenshot/authentication-methods-dashboard.png`
+This area allows administrators to review and manage authentication method policies that determine which authentication methods are available to users within the organisation.
 
----
+I used this page to explore the available authentication methods and understand how authentication policies are managed centrally.
 
-### 2. Available Authentication Methods
+**Screenshot:**
 
-Reviewed the authentication methods available in the tenant.
-
-Depending on the tenant configuration and licensing, these may include:
-
-- Microsoft Authenticator.
-- SMS.
-- Voice calls.
-- FIDO2 security keys and passkeys.
-- Temporary Access Pass.
-- Certificate-based authentication.
-- Other supported authentication methods.
-
-**Screenshot:** `Screenshot/available-authentication-methods.png`
+![Authentication Methods Dashboard](./Screenshot/01-authentication-methods-dashboard.png)
 
 ---
 
-### 3. Microsoft Authenticator Configuration
+### 2. Microsoft Authenticator Policy
 
-Reviewed the Microsoft Authenticator policy and its configuration options.
+Opened the Microsoft Authenticator authentication method policy to review its configuration.
 
-Microsoft Authenticator can support multifactor authentication and passwordless sign-in experiences, depending on the configuration.
+Microsoft Authenticator can support Multi-Factor Authentication and passwordless sign-in, depending on the organisation's configuration and the options enabled for users.
 
-**Screenshot:** `Screenshot/microsoft-authenticator-policy.png`
+Authentication method policies help administrators control which users can use a particular method and how that method is made available.
 
----
+This step helped me understand how Microsoft Authenticator is managed through Microsoft Entra ID.
 
-### 4. Authentication Method Policy
+**Screenshot:**
 
-Reviewed how administrators enable or disable supported authentication methods and define which users or groups can use them.
-
-Policy scope should be carefully considered before making changes that affect users.
-
-**Screenshot:** `Screenshot/authentication-method-policy.png`
+![Microsoft Authenticator Policy](./Screenshot/02-microsoft-authenticator-policy.png)
 
 ---
 
-### 5. User Authentication Methods
+### 3. User Authentication Methods
 
-Opened a designated test user's authentication method information and reviewed the methods registered to the account, where permitted.
+Opened the authentication methods section for a designated test user.
 
-This helps administrators understand how authentication methods can be managed and troubleshot for individual users.
+This section allows administrators to review the authentication methods associated with a user and, where permitted, manage or remove methods.
 
-**Screenshot:** `Screenshot/user-authentication-methods.png`
+Reviewing a user's authentication methods can help administrators troubleshoot sign-in issues, support users who have lost access to an authentication method, and investigate authentication-related problems.
 
----
+Access to some actions depends on the administrator's assigned Microsoft Entra role and the organisation's configuration.
 
-### 6. Authentication Method Registration
+**Screenshot:**
 
-Explored the user registration experience for supported authentication methods.
-
-Users may need to register methods before they can use them for MFA or passwordless authentication.
-
-**Screenshot:** `Screenshot/authentication-method-registration.png`
+![User Authentication Methods](./Screenshot/03-user-authentication-methods.png)
 
 ---
 
-### 7. Temporary Access Pass
+### 4. Authentication Method Registration
 
-Reviewed Temporary Access Pass (TAP), where available.
+Explored the user-facing security information registration experience.
 
-A Temporary Access Pass is a time-limited passcode that can help users register authentication methods or recover access in supported scenarios.
+Users can access their security information to register or manage supported authentication methods, such as Microsoft Authenticator, depending on the methods enabled by their organisation.
 
-Its configuration and use should follow the organisation's identity security requirements.
+This process is important when onboarding users, setting up MFA, or preparing users to authenticate using an additional or passwordless method.
 
-**Screenshot:** `Screenshot/temporary-access-pass.png`
+The registration experience also helps demonstrate the difference between an administrator configuring an authentication method policy and an end user registering an authentication method for their account.
 
----
+**Screenshot:**
 
-### 8. Authentication Validation
-
-Tested the authentication experience using a designated test account, where possible, and reviewed the outcome.
-
-The purpose was to understand how the configured authentication methods affect sign-in and how administrators can investigate authentication issues.
-
-**Screenshot:** `Screenshot/authentication-validation.png`
+![Authentication Method Registration](./Screenshot/04-authentication-method-registration.png)
 
 ---
 
-## 🔐 Security Validation
+### 5. Authentication Validation
 
-The following security considerations were reviewed during the lab:
+Reviewed the authentication experience and the available validation evidence for the designated test account.
 
-- Enable authentication methods according to organisational security requirements.
-- Restrict policy scope to the appropriate users and groups.
-- Prefer phishing-resistant authentication methods where appropriate and supported.
-- Ensure users have suitable authentication and recovery options.
-- Apply appropriate controls when creating and managing Temporary Access Passes.
-- Review authentication failures when troubleshooting user access.
-- Test policy changes with designated accounts before wider deployment.
-- Avoid disabling authentication methods that users depend on without providing a safe alternative.
+Microsoft Entra sign-in logs provide information that can help administrators investigate authentication attempts, including whether a sign-in succeeded or failed and details about the authentication requirements and methods involved.
 
----
+To investigate a sign-in:
 
-## 🧰 Tools & Services Used
+1. Open the Microsoft Entra admin centre.
+2. Navigate to **Entra ID → Monitoring & health → Sign-in logs**.
+3. Filter the logs using the designated test user's account.
+4. Select the relevant sign-in event.
+5. Open the **Authentication Details** tab.
+6. Review the authentication steps, results, and any available additional details.
 
-- Microsoft Entra admin centre
-- Authentication Methods
-- Microsoft Authenticator
-- Temporary Access Pass
-- Microsoft Entra user management
+The information displayed depends on the selected event and the authentication flow. A security information registration event should not automatically be treated as proof that a separate sign-in was successfully validated.
+
+**Screenshot:**
+
+![Authentication Validation](./Screenshot/05-authentication-validation.png)
 
 ---
 
-## 📈 Outcome
+### 6. Temporary Access Pass (TAP)
 
-This lab developed my understanding of authentication method management in Microsoft Entra ID and how administrators can support secure user authentication.
+Explored Temporary Access Pass (TAP), a time-limited passcode in Microsoft Entra ID that can help users register authentication methods or recover access to their accounts.
 
-It also reinforced the importance of managing authentication method policies, reviewing user registration, and testing authentication changes before implementing them across an organisation.
+TAP can be particularly useful during onboarding or when a user needs to register an authentication method but cannot initially complete the usual authentication process.
 
----
+Administrators can configure the TAP authentication method policy and, when authorised, issue a TAP to a designated user.
 
-## 🧠 Troubleshooting Notes
+TAP configuration can include settings such as its lifetime and whether it can be used once or multiple times, depending on the policy configuration.
 
-### Authentication Method Not Available
+When using TAP, administrators should ensure that:
+- It is issued only to the intended user.
+- Its lifetime is appropriate for the use case.
+- The code is shared securely.
+- The code is not stored in public repositories or exposed in screenshots.
+- It is used in accordance with the organisation's identity security procedures.
 
-- Confirm that the authentication method is supported by the tenant.
-- Check whether the method is enabled in the relevant policy.
-- Review whether the user or group is included in the policy scope.
-- Check licensing and feature requirements where applicable.
+**Screenshot:**
 
-### User Cannot Register an Authentication Method
-
-- Confirm that the method is enabled for the user.
-- Review the user's registration experience and any applicable registration requirements.
-- Check whether existing authentication requirements are affecting registration.
-- Review available sign-in and authentication troubleshooting information.
-
-### Temporary Access Pass Issues
-
-- Confirm that Temporary Access Pass is enabled and configured.
-- Check the pass's validity period and usage restrictions.
-- Verify that the test account is eligible to use it.
-- Never publish active passcodes or authentication secrets in a public repository.
+![Temporary Access Pass](./Screenshot/06-temporary-access-pass.png)
 
 ---
 
-## 🏁 Lab Result
+### 7. Temporary Access Pass – User Sign-In Experience
 
-**Status:** Document the result after completing and validating the lab.
+Reviewed the Temporary Access Pass sign-in experience.
 
-This lab demonstrates practical knowledge of Microsoft Entra authentication methods, authentication policy management, user registration, and authentication troubleshooting.
+A user with a valid TAP may be able to use it to access the relevant authentication experience and register a supported authentication method, subject to the tenant's configuration and Microsoft's authentication requirements.
+
+This process demonstrates how TAP can support initial authentication method registration when a user does not yet have access to their usual authentication method.
+
+The exact experience depends on the configuration of the tenant, the user account, and the authentication method being registered.
+
+**Security note:** Temporary Access Pass codes are sensitive credentials. They must never be included in screenshots committed to a public repository.
+
+**Screenshot:**
+
+![Temporary Access Pass Sign-In](./Screenshot/07-temporary-access-pass.png)
+
+---
+
+## 🔐 Security Considerations
+
+Authentication methods are an important part of identity security in Microsoft Entra ID.
+
+Key security considerations include:
+
+- **Least privilege:** Assign only the administrator roles required to manage authentication methods.
+- **Multi-Factor Authentication:** Encourage users to register appropriate authentication methods in accordance with organisational policy.
+- **Secure registration:** Ensure authentication method registration is completed by the intended user.
+- **Temporary Access Pass protection:** Treat TAP as a sensitive, time-limited credential and share it securely.
+- **Policy scope:** Enable authentication methods for the appropriate users or groups rather than unnecessarily broadening access.
+- **Sign-in monitoring:** Review sign-in logs when investigating authentication issues or suspicious activity.
+- **Credential protection:** Never commit passwords, TAP codes, recovery codes, or other credentials to GitHub.
+- **Evidence sanitisation:** Remove or obscure personal information, tenant identifiers, IP addresses, and other sensitive details from screenshots before publishing them.
+
+---
+
+## 🔎 Troubleshooting and Validation
+
+During authentication method configuration and testing, administrators may encounter issues caused by permissions, policy settings, user eligibility, or licensing requirements.
+
+Common checks include:
+
+- Confirming that the relevant authentication method is enabled in the tenant's authentication method policy.
+- Verifying that the intended user falls within the policy's configured scope.
+- Checking that the administrator has the required role to view or manage the user's authentication methods.
+- Confirming that a Temporary Access Pass is valid and has not expired or exceeded its permitted usage.
+- Reviewing the relevant sign-in event and its Authentication Details when troubleshooting authentication attempts.
+- Checking whether the required licence is available for features that depend on additional Microsoft Entra capabilities.
+
+Not every authentication feature requires the same licence or administrator role. Requirements depend on the specific feature and the action being performed.
+
+---
+
+## 📚 Key Learnings
+
+Through this lab, I developed a better understanding of:
+
+- How authentication method policies are managed in Microsoft Entra ID.
+- The role of Microsoft Authenticator in MFA and passwordless authentication.
+- How administrators can review authentication methods associated with a user.
+- The user-facing process for registering security information.
+- How Temporary Access Pass can support authentication method registration and account onboarding.
+- How sign-in logs help administrators investigate authentication activity.
+- Why least privilege, secure credential handling, and appropriate policy scoping are important when managing identity security.
+
+---
+
+## ✅ Final Result
+
+This lab provided practical exposure to Microsoft Entra ID authentication method management, Microsoft Authenticator policy configuration, user authentication method review, security information registration, and Temporary Access Pass.
+
+It also reinforced the importance of validating authentication activity, protecting temporary credentials, and applying appropriate administrative permissions when managing user authentication.
+
+The lab forms part of my Microsoft Entra ID identity and access management learning portfolio, documenting practical work related to authentication methods and identity security.
+
+---
