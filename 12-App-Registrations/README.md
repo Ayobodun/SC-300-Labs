@@ -2,11 +2,11 @@
 
 ## 📌 Overview
 
-This lab focuses on application identity management in Microsoft Entra ID, including app registrations, enterprise applications, API permissions, and application authentication.
+This lab explores application identity management in Microsoft Entra ID, focusing on app registrations, Microsoft Graph API permissions, permission consent, and enterprise applications.
 
-App registrations allow developers and administrators to integrate applications with Microsoft Entra ID for authentication and access to protected resources.
+App registrations allow applications to integrate with Microsoft Entra ID for authentication and access to protected resources.
 
-The objective of this lab was to understand how applications are registered, how permissions are configured, and how administrators can reduce security risks associated with application access.
+The objective of this lab was to understand how applications are registered, how API permissions are managed, and how administrators can evaluate the security risks associated with application access.
 
 ---
 
@@ -16,32 +16,29 @@ Poorly managed application registrations can introduce significant security risk
 
 - Applications receiving excessive permissions.
 - Unauthorised access to organisational data.
-- Exposed client secrets or application credentials.
+- Exposed application credentials.
 - Applications retaining permissions that are no longer required.
-- Unintended tenant-wide consent to application permissions.
+- Unintended consent to application permissions.
 - Limited visibility into application identities and their access.
 
 Microsoft Entra ID provides controls for managing application identities, API permissions, consent, and credentials.
 
 ---
 
-## 🛠️ What I Built
+## 🛠️ What I Explored
 
 In this lab, I explored application identity management in Microsoft Entra ID.
 
 The lab covered:
 
 - Reviewing the App registrations dashboard.
-- Creating a test app registration where permitted.
-- Configuring application name and supported account types.
-- Understanding application (client) IDs and tenant IDs.
+- Registering and reviewing a test application.
+- Understanding application and tenant identifiers.
+- Reviewing Microsoft Graph API permissions.
+- Understanding delegated and application permissions.
+- Exploring the admin consent process.
 - Reviewing the relationship between app registrations and enterprise applications.
-- Exploring Microsoft Graph API permissions.
-- Understanding delegated versus application permissions.
-- Reviewing admin consent requirements.
-- Exploring client secrets and certificate credentials.
-- Reviewing authentication and redirect URI configuration.
-- Understanding least-privilege application access.
+- Understanding application access and least-privilege principles.
 
 ---
 
@@ -60,117 +57,127 @@ The lab covered:
 
 ### 1. App Registrations Dashboard
 
-Opened the App registrations area in the Microsoft Entra admin centre and reviewed the available application management options.
+Opened the App registrations section in the Microsoft Entra admin centre and reviewed the available application management options.
 
-**Screenshot:** `Screenshot/app-registrations-dashboard.png`
+This area allows administrators to register applications, review existing registrations, and manage application configurations.
+
+**Screenshot:**
+
+![App Registrations Dashboard](./Screenshot/app-registrations-dashboard.png)
 
 ---
 
-### 2. Create an App Registration
+### 2. Test Application Registration
 
-Created a test application registration where permitted.
+Created a test application registration in Microsoft Entra ID.
 
-Configured the application name and reviewed the supported account types available for the registration.
+Application registration establishes an application's identity in the tenant and provides a starting point for configuring authentication and API access.
 
-**Screenshot:** `Screenshot/app-registration-created.png`
+The registration process includes selecting an application name and supported account types.
+
+**Screenshot:**
+
+![App Registration Created](./Screenshot/app-registration-created.png)
 
 ---
 
 ### 3. Application Overview
 
-Opened the application overview and reviewed its key identifiers.
+Opened the application's Overview page and reviewed its identifying information.
 
-These may include:
+Application registrations can include identifiers such as:
 
-- Application (client) ID.
-- Directory (tenant) ID.
-- Object ID.
+- **Application (client) ID:** Identifies the application.
+- **Directory (tenant) ID:** Identifies the Microsoft Entra tenant.
+- **Object ID:** Identifies the application's registration object within the tenant.
 
 These identifiers serve different purposes and should not be treated as interchangeable.
 
-**Screenshot:** `Screenshot/app-registration-overview.png`
+**Screenshot:**
+
+![App Registration Overview](./Screenshot/app-registration-overview.png)
 
 ---
 
-### 4. Authentication Configuration
+### 4. Microsoft Graph API Permissions
 
-Reviewed the Authentication section of the app registration.
+Reviewed the API permissions configured for the application.
 
-Explored the supported authentication configuration options, including redirect URIs where applicable.
+Microsoft Graph provides APIs that applications can use to interact with Microsoft 365 and Microsoft Entra resources, subject to the permissions granted.
 
-Redirect URIs must be configured carefully because they determine where authentication responses can be sent.
+The test application included the delegated `User.Read` permission, which allows an application to read the signed-in user's profile information within the permission's scope.
 
-**Screenshot:** `Screenshot/app-authentication-settings.png`
+Reviewing configured permissions helps administrators understand what an application is requesting and whether those permissions are appropriate.
 
----
+**Screenshot:**
 
-### 5. API Permissions
-
-Opened the API permissions section and reviewed how an application requests access to APIs such as Microsoft Graph.
-
-Explored the permissions available for the test application.
-
-**Screenshot:** `Screenshot/app-api-permissions.png`
+![App API Permissions](./Screenshot/app-api-permissions.png)
 
 ---
 
-### 6. Delegated vs Application Permissions
+### 5. Delegated vs Application Permissions
 
-Reviewed the difference between delegated permissions and application permissions.
+Explored the distinction between delegated permissions and application permissions in Microsoft Graph.
 
-**Delegated permissions:**
-Allow an application to access resources on behalf of a signed-in user, subject to the granted permissions and the user's access.
+**Delegated permissions**
 
-**Application permissions:**
-Allow an application to access resources as its own identity, without a signed-in user, subject to the permissions granted.
+Delegated permissions allow an application to access resources on behalf of a signed-in user. Access is subject to the granted permissions and the user's own access.
 
-Application permissions can provide broad access, so they require careful review and appropriate administrative consent.
+**Application permissions**
 
-**Screenshot:** `Screenshot/delegated-vs-application-permissions.png`
+Application permissions allow an application to access supported resources using its own identity, without a signed-in user. These permissions are commonly used by background services and automated applications.
 
----
+Application permissions can provide broader access to organisational data and may require administrator consent.
 
-### 7. Admin Consent
+Understanding this distinction helps administrators select an appropriate permission model for each application's purpose.
 
-Reviewed the admin consent process and the implications of granting permissions to an application.
+**Screenshot:**
 
-Where permitted, examined the consent status of the test application's requested API permissions.
-
-Admin consent should only be granted after confirming that the permissions are necessary and appropriately scoped.
-
-**Screenshot:** `Screenshot/app-admin-consent.png`
+![Delegated and Application Permissions](./Screenshot/delegated-vs-application-permissions.png)
 
 ---
 
-### 8. Certificates & Secrets
+### 6. Admin Consent
 
-Reviewed the Certificates & secrets section of the app registration.
+Reviewed the admin consent controls available on the application's API permissions page.
 
-Explored how applications can authenticate using credentials such as client secrets or certificates.
+Microsoft Entra ID uses consent to determine whether an application can use its requested API permissions. Depending on the permission and tenant configuration, consent may be granted by a user or require an administrator.
 
-Client secrets should be protected, rotated when necessary, and never committed to a public repository.
+Before granting admin consent, administrators should:
 
-Where supported, certificate-based authentication can provide an alternative to client secrets.
+- Confirm that the application has a legitimate business purpose.
+- Review each requested permission.
+- Verify that the permissions are necessary.
+- Consider the potential impact of granting access.
+- Follow organisational approval procedures.
 
-**Screenshot:** `Screenshot/app-certificates-and-secrets.png`
+The presence of an admin consent control does not mean that consent has been granted. The consent status should be checked separately.
+
+**Screenshot:**
+
+![App Admin Consent](./Screenshot/app-admin-consent.png)
 
 ---
 
-### 9. Enterprise Application / Service Principal
+### 7. Enterprise Application Overview
 
 Reviewed the corresponding enterprise application where available.
 
-An app registration defines the application's configuration in its home tenant, while the service principal represents the application's identity in a particular tenant.
+An app registration defines the application's configuration in its home tenant. The associated service principal represents the application's identity in a particular tenant and supports tenant-specific access and consent management.
 
-Explored how administrators can review the enterprise application's properties and access-related settings.
+Enterprise applications provide administrators with a place to review application-related settings and manage aspects of access within the tenant.
 
-**Screenshot:** `Screenshot/enterprise-application-overview.png`
+Understanding the relationship between app registrations and enterprise applications is important when investigating application access and permissions.
+
+**Screenshot:**
+
+![Enterprise Application Overview](./Screenshot/enterprise-application-overview.png)
 
 ---
 
-## 🔐 Security Validation
+## 🔐 Security Considerations
 
-The following security considerations were reviewed during the lab:
+Key security considerations for application identity management include:
 
 - Apply the principle of least privilege to API permissions.
 - Understand whether delegated or application permissions are appropriate.
@@ -178,35 +185,37 @@ The following security considerations were reviewed during the lab:
 - Avoid granting broad application permissions without a clear business requirement.
 - Protect client secrets and certificate private keys.
 - Rotate credentials according to organisational requirements.
-- Use appropriate redirect URIs.
+- Configure appropriate redirect URIs when application authentication requires them.
 - Review application owners and remove unnecessary access.
 - Periodically review application permissions and credentials.
 - Monitor application sign-ins and audit events where available.
-- Avoid storing secrets, tokens, or private keys in GitHub repositories.
+- Never store secrets, access tokens, or private keys in a public GitHub repository.
 
-**Important:** Use a test application and an authorised tenant. Do not grant tenant-wide consent or create production credentials unless you are authorised and understand the impact.
+This lab focuses on app registrations, permissions, consent, and enterprise applications. Authentication settings and credential configuration are additional areas that can be explored in a future lab.
 
 ---
 
 ## 🧰 Tools & Services Used
 
 - Microsoft Entra admin centre
-- App registrations
-- Enterprise applications
+- Microsoft Entra app registrations
+- Microsoft Entra enterprise applications
 - Microsoft Graph API permissions
-- Application authentication settings
-- Certificates & secrets
-- Microsoft Entra audit logs
+- Microsoft Entra permission consent controls
 
 ---
 
-## 📈 Outcome
+## 📈 Key Learnings
 
-This lab developed my understanding of application identity management in Microsoft Entra ID.
+This lab developed my understanding of:
 
-It reinforced the differences between app registrations and enterprise applications, delegated and application permissions, and the security implications of granting API access.
-
-It also highlighted the importance of least privilege, secure credential management, and careful review of administrative consent.
+- How application registrations establish application identities in Microsoft Entra ID.
+- The purpose of application, tenant, and object identifiers.
+- How Microsoft Graph API permissions control application access.
+- The differences between delegated and application permissions.
+- How admin consent affects an application's ability to use permissions.
+- The relationship between app registrations and enterprise applications.
+- Why least privilege and careful permission reviews are important for application security.
 
 ---
 
@@ -232,18 +241,21 @@ It also highlighted the importance of least privilege, secure credential managem
 - Check whether organisational policies restrict consent.
 - Ensure that the requested permissions are justified before proceeding.
 
-### Application Authentication Fails
+### Application Access Issues
 
-- Confirm that the tenant ID and application client ID are correct.
-- Review the authentication configuration and redirect URIs.
-- Check that the required permissions have been granted.
-- Verify that credentials are valid and have not expired.
-- Review available sign-in logs and application error messages.
+- Confirm that the correct application and tenant are being used.
+- Review the configured API permissions.
+- Check whether the necessary consent has been granted.
+- Review application sign-in logs and available error messages.
 
 ---
 
 ## 🏁 Lab Result
 
-**Status:** Document the result after completing and validating the lab.
+This lab documents my exploration of Microsoft Entra application identity management, including app registrations, Microsoft Graph API permissions, delegated and application permissions, admin consent controls, and enterprise applications.
 
-This lab demonstrates practical knowledge of Microsoft Entra app registrations, enterprise applications, API permissions, application authentication, and application security governance.
+It reinforced the importance of understanding application permissions, evaluating consent requests, and applying least-privilege principles when managing application access.
+
+The lab forms part of my Microsoft Entra ID identity and access management portfolio.
+
+---
