@@ -63,7 +63,7 @@ This area allows administrators to register applications, review existing regist
 
 **Screenshot:**
 
-![App Registrations Dashboard](./Screenshot/app-registrations-dashboard.png)
+![App Registrations Dashboard](./Screenshot/app-registration-overview.png)
 
 ---
 
