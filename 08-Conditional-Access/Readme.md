@@ -111,7 +111,7 @@ Correctly configuring these assignments is important to ensure that security con
 
 **Screenshot:**
 
-![Conditional Access User and Group Assignments](./Screenshot/06-policy-users-and-groups.png)
+![Conditional Access User and Group Assignments](./Screenshot/06-user-assignment.png)
 
 ---
 
